@@ -1,0 +1,19 @@
+{
+    "name": "luphathuy/assignment",
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "app/",
+                "config/"
+            ],
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lữ Phát Huy",
+            "email": "huylppc05334@fpt.edu.vn"
+        }
+    ],
+    "require": {}
+}
