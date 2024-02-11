@@ -11,7 +11,7 @@ ob_start();
       </div>
       <div class="text-end">
         <div class="filter__sort mb-5">
-          <select onchange="loadPage(this.value)">
+          <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
             <option value="<?= _WEB_ROOT ?>/videoSearch?pages=<?= $_GET['pages'] ?>&sort=desc&kw=<?= $_GET['kw'] ?>" <?= !empty($_GET['sort'] == 'desc') ? 'selected' : '' ?>>Mới Nhất</option>
             <option value="<?= _WEB_ROOT ?>/videoSearch?pages=<?= $_GET['pages'] ?>&sort=asc&kw=<?= $_GET['kw'] ?>" <?= !empty($_GET['sort'] == 'asc') ? 'selected' : '' ?>>Cũ Nhất</option>
           </select>

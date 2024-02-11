@@ -10,7 +10,7 @@ $item = $getVideoDetail; {
 ?>
   <section class="trending-podcast-section container-video mt-5" style="margin-bottom: 180px;">
     <div class="row m-0">
-      <div class="col-lg-8 col-sm-12 mt-2">
+      <div class="col-lg-8 col-sm-12 mt-2 p-0">
         <video id="video_controls" width="100%" controls playsinline>
           <source src="<?= $video_path ?>" type="video/mp4">
         </video>
@@ -112,7 +112,7 @@ $item = $getVideoDetail; {
           <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="col-lg-4 col-md-12 col-sm-12 p-0">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-1">
             <div class="bg-black bg-opacity-10 pt-2 pb-2 ms-1 me-1">

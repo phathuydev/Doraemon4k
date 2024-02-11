@@ -35,7 +35,7 @@ class routes
             ->get('/signout', [AuthClientController::class, 'signout'])
             ->get('/videoApi', [VideoApiClientController::class, 'index'])
             ->get('/videoApiDetail', [VideoApiClientController::class, 'detail'])
-            ->post('/videApioDetail', [VideoApiClientController::class, 'detail'])
+            ->post('/videoApiDetail', [VideoApiClientController::class, 'detail'])
             ->get('/video', [VideoClientController::class, 'index'])
             ->get('/videoDetail', [VideoClientController::class, 'detail'])
             ->post('/videoDetail', [VideoClientController::class, 'detail'])

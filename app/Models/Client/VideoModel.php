@@ -16,6 +16,26 @@ class VideoModel extends BaseModel
     $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' ORDER BY created_at DESC');
     return $data;
   }
+  public function getAllComment($video_id, $order_by = 'DESC')
+  {
+    $data = $this->getAll('comments INNER JOIN users ON comments.user_id = users.user_id WHERE video_id = ' . $video_id . ' AND parent_id = 0 AND user_id_reply = 0 ORDER BY comments.created_at ' . $order_by . '');
+    return $data;
+  }
+  public function getCommentReply($video_id, $parent_id)
+  {
+    $data = $this->getAll('comments INNER JOIN users ON comments.user_id = users.user_id WHERE video_id = ' . $video_id . ' AND parent_id = ' . $parent_id . ' AND grandParent_id = 0 AND user_id_reply = 0');
+    return $data;
+  }
+  public function getGrandParentComment($video_id, $grandParent_id)
+  {
+    $data = $this->getAll('comments INNER JOIN users ON comments.user_id = users.user_id WHERE video_id = ' . $video_id . ' AND grandParent_id = ' . $grandParent_id . '');
+    return $data;
+  }
+  public function getNameReply($user_id)
+  {
+    $data = $this->getAll('users WHERE user_id = ' . $user_id . '');
+    return $data;
+  }
   public function getVideoDetail($video_id)
   {
     $data = $this->getOne('videos INNER JOIN categories ON videos.category_id = categories.category_id', 'videos.video_id', $video_id, '*, videos.created_at as created_at_video');
