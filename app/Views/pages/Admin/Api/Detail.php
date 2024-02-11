@@ -13,7 +13,7 @@ ob_start();
           <div class="mb-3">
             <p>
               <?php $value = $episodes; { ?>
-                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" class="embed-responsive-item" frameborder="0" allowfullscreen></iframe>
+                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" allowfullscreen></iframe>
               <?php } ?>
             </p>
             <p>Xem trước</p>
