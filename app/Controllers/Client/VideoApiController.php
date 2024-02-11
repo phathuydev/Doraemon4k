@@ -42,34 +42,6 @@ class VideoApiController extends BaseController
   {
     // Bắt đầu output buffering
     ob_start();
-    if (empty($_SESSION['last_view_time'])) {
-      $_SESSION['last_view_time'] = time();
-    }
-    if (!empty($_SESSION['user_id_client'])) {
-      $getNameCategory = $this->province->getUserWatched($_SESSION['user_id_client'], $_GET['vdId']);
-      if (!$getNameCategory && (time() - $_SESSION['last_view_time']) >= 30) {
-        $data = [
-          'video_id' => $_GET['vdId'],
-          'user_id' => $_SESSION['user_id_client']
-        ];
-        $this->province->insertView($data);
-        unset($_SESSION['last_view_time']);
-      }
-    }
-    if (isset($_POST['like'])) {
-      $getUserLike = $this->province->getOneLike($_SESSION['user_id_client'], $_GET['vdId']);
-      if ($getUserLike) {
-        $this->province->deletedWhereVideoAndUser($_GET['vdId'], $_SESSION['user_id_client']);
-      } else {
-        $data = [
-          'video_id' => $_GET['vdId'],
-          'user_id' => $_SESSION['user_id_client']
-        ];
-        $this->province->insertLike($data);
-      }
-    } elseif (isset($_POST['dislike'])) {
-      $this->province->deletedWhereVideoAndUser($_GET['vdId'], $_SESSION['user_id_client']);
-    }
     $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
     $urlDetail = 'https://ophim1.com/phim/' . $_GET['slug'] . '';
