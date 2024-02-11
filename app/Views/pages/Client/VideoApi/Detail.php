@@ -21,12 +21,12 @@ $item = $getVideoDetail; {
             <span class="ms-2 text-dark"><img src="<?= _WEB_ROOT ?>/public/client/images/verified.png" class="owl-carousel-verified-image img-fluid" width="20" alt=""></span>
           </div>
           <div class="d-flex justify-content-center align-items-center bg-black bg-opacity-75 rounded-5 p-2 text-white">
-            <?php
+          <?php
             if (!empty($_SESSION['user_id_client'])) :
               if (!empty($countLikeVideoWhereUserAndVideo) == 0) : ?>
                 <form method="post" id="insertLikeForm">
                   <input type="hidden" name="like" value="like">
-                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=1" onclick="insertLike()">
+                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="insertLike()">
                     <div class="d-flex">
                       <div class="bi-hand-thumbs-up text-white m-0" id="thumbs_like"></div>
                       <div class="ms-1 text-white" id="number_like"><?= $countLikeVideo ?></div>
@@ -36,7 +36,7 @@ $item = $getVideoDetail; {
               <?php else : ?>
                 <form method="post" id="insertLikeForm">
                   <input type="hidden" name="like" value="like">
-                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=1" onclick="insertLike()">
+                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="insertLike()">
                     <div class="d-flex">
                       <div class="bi-hand-thumbs-up-fill text-white m-0" id="thumbs_like"></div>
                       <div class="ms-1 text-white" id="number_like"><?= $countLikeVideo ?></div>
@@ -73,7 +73,7 @@ $item = $getVideoDetail; {
             <?php if (!empty($_SESSION['user_id_client'])) : ?>
               <form method="post" id="deleteDisLikeForm">
                 <input type="hidden" name="dislike" value="dislike">
-                <button class="bg-transparent border-0" type="button" id="dislike" data-href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=1" onclick="disLike()">
+                <button class="bg-transparent border-0" type="button" id="dislike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="disLike()">
                   <div class="bi-hand-thumbs-down text-white m-0" id="thumbs_like_3"></div>
                 </button>
               </form>
