@@ -1,10 +1,4 @@
-<div class="row m-0 mt-3 bg-light p-3 rounded-2">
-  <div class="filter__sort mb-3 p-0">
-    <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
-      <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" <?= empty($_GET['sort']) ? 'selected' : '' ?>>Mới Nhất</option>
-      <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>&sort=asc" <?= !empty($_GET['sort'] == 'asc') ? 'selected' : '' ?>>Cũ Nhất</option>
-    </select>
-  </div>
+<div class="row m-0 mt-md-3 bg-light p-3 rounded-2">
   <div class="col-md-12 col-lg-10 col-xl-8">
     <div class="card-body">
       <div class="row">
@@ -318,7 +312,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
-                                    <textarea id="reply5__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
+                                    <textarea id="reply6__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
                                     <input type="hidden" name="parent_id" value="<?= $value['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $value['grandParent_id'] ?>">
                                     <input type="hidden" name="user_id_reply" value="<?= $value['user_id'] ?>">

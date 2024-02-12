@@ -67,9 +67,8 @@ class BaseModel implements ModelInterface
     }
     public function getOne($table, $cond, $condValue, $selectColumns = '*')
     {
-        $query = "SELECT $selectColumns FROM $table WHERE $cond = :condValue LIMIT 1";
+        $query = "SELECT $selectColumns FROM $table WHERE $cond = $condValue LIMIT 1";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':condValue', $condValue);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

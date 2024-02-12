@@ -12,7 +12,7 @@ $item = $getVideoDetail; {
     <div class="row m-0">
       <div class="col-lg-8 col-sm-12 mt-2 p-0">
         <?php $value = $episodes; { ?>
-          <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" width="100%" class="embed-responsive-item rounded-2" frameborder="0" allowfullscreen playsinline></iframe>
+          <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" width="100%" class="embed-responsive-item" frameborder="0" allowfullscreen playsinline></iframe>
         <?php } ?>
         <p class="text-dark mt-2 mb-3 h5 font-weight-bold ps-2 pe-2 ps-md-0 pe-md-0 ps-lg-0 pe-lg-0"><?= $video_title ?></p>
         <div class="d-flex justify-content-between align-items-center ps-2 pe-2 ps-md-0 pe-md-0 ps-lg-0 pe-lg-0">
@@ -119,11 +119,19 @@ $item = $getVideoDetail; {
           } ?>
         </div>
         <div class="mt-3 ms-1 me-1" id="__computerComment">
-          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận</p>
+          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 text-end">
             <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
               <textarea id="editor" name="content"></textarea>
-              <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Đăng</button>' :
+              <?= (!empty($_SESSION['user_id_client']) ? '<div class="d-flex justify-content-between align-items-center mt-2">
+                        <div class="filter__sort p-0">
+                        <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET['vdId'] . '&slug=' . $_GET['slug'] . '&epi=' . $_GET['epi'] . '" ' . (empty($_GET['sort']) ? 'selected' : '') . '>Mới Nhất</option>
+                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET['vdId'] . '&slug=' . $_GET['slug'] . '&epi=' . $_GET['epi'] . '&sort=asc" ' . (!empty($_GET['sort'] == 'asc') ? 'selected' : '') . '>Cũ Nhất</option>
+                        </select>
+                        </div>
+                        <button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>
+                      </div>' :
                 '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
             </form>
           </div>
@@ -134,18 +142,19 @@ $item = $getVideoDetail; {
                 console.error(error);
               });
           </script>
-          <?php include './app/Views/inc/Client/comment.php'; ?>
+          <?php include './app/Views/inc/Client/comment_computer.php'; ?>
         </div>
-
-        <div class="mt-3 rounded-2 ms-1 me-1" id="__phoneComment">
+        <div class="mt-3 mb-2 rounded-2 ms-1 me-1" id="__phoneComment">
           <a class="btn btn-light w-100 " data-bs-toggle="modal" href="#exampleModalToggle" role="button">
             <div class="text-start text-dark">
-              Bình luận 555
+              Bình luận <?= $countCommentVideo['count'] ?>
             </div>
-            <div class="text-start mt-2 mb-1">
-              <img src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="30" alt="">
-              <span class="ms-2 text-dark">Xin chào</span>
-            </div>
+            <?php $getOneCmt = $getOneComment; { ?>
+              <div class="text-start mt-2 mb-1 d-flex">
+                <img src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="30" height="30" alt="">
+                <span class="ms-2 text-dark"><?= $getOneCmt['content'] ?></span>
+              </div>
+            <?php } ?>
           </a>
           <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-fullscreen">
@@ -154,45 +163,30 @@ $item = $getVideoDetail; {
                   <p class="modal-title text-dark" style="font-weight: bold;" id="exampleModalToggleLabel">Bình luận</p>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  <div class="row d-flex justify-content-center">
-                    <div class="col-md-12 col-lg-10 col-xl-8">
-                      <div class="card-body p-4">
-                        <div class="row">
-                          <div class="col">
-                            <div class="d-flex flex-start">
-                              <img style="margin-top: 6px;" src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="35" height="35" alt="">
-                              <div class="flex-grow-1 flex-shrink-1">
-                                <div class="ms-2">
-                                  <div class="d-flex justify-content-between align-items-center">
-                                    <p class="mb-1 text-dark">
-                                      Thảo
-                                    </p>
-                                  </div>
-                                  <p class="small mb-0 text-dark">
-                                    Hi
-                                  </p>
-                                </div>
-                                <div class="d-flex flex-start mt-3">
-                                  <img style="margin-top: 6px;" class="me-2" src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="35" height="35" alt="">
-                                  <div class="flex-grow-1 flex-shrink-1">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                      <p class="mb-1 text-dark">
-                                        Huy
-                                      </p>
-                                    </div>
-                                    <p class="small mb-0 text-dark">
-                                      Hi
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                <div class="modal-body p-0 bg-light">
+                  <div class="mt-3 text-end ms-3 me-3">
+                    <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                      <textarea id="editor_phone" name="content"></textarea>
+                      <?= (!empty($_SESSION['user_id_client']) ? '<div class="d-flex justify-content-between align-items-center mt-3">
+                        <div class="filter__sort p-0">
+                        <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET[''] . '&slug=' . $_GET[''] . '&epi=' . $_GET[''] . '" ' . (empty($_GET['sort'] ? 'selected' : '')) . '>Mới Nhất</option>
+                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET[''] . '&slug=' . $_GET[''] . '&epi=' . $_GET[''] . '" ' . (empty($_GET['sort'] ? 'selected' : '')) . '>Cũ Nhất</option>
+                        </select>
                         </div>
-                      </div>
-                    </div>
+                        <button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>
+                      </div>' :
+                        '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+                    </form>
                   </div>
+                  <script>
+                    ClassicEditor
+                      .create(document.querySelector('#editor_phone'))
+                      .catch(error => {
+                        console.error(error);
+                      });
+                  </script>
+                  <?php include './app/Views/inc/Client/comment_phone.php'; ?>
                 </div>
               </div>
             </div>
