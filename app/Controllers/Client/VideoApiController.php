@@ -82,6 +82,7 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['countViewVideo'] = $this->province->countViewVideo($_GET['vdId']);
     $this->data['subcontent']['countLikeVideo'] = $this->province->countLikeVideo($_GET['vdId']);
     $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideo(1);
+    $this->data['subcontent']['current_url'] = "" . _WEB_ROOT . "$_SERVER[REQUEST_URI]";
     $this->data['subcontent']['countLikeVideoWhereUserAndVideo'] = $countLikeVideoWhereUserAndVideo['count'];
     $this->render('ClientMasterLayout', $this->data);
 

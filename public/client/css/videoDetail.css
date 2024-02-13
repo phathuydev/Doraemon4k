@@ -226,12 +226,16 @@ a.channel:hover {
     padding: 0 20px 0 20px;
   }
 
-  #__computerComment {
+  .__computerComment {
     display: none !important;
   }
 
-  #__phoneComment {
+  .__phoneComment {
     display: block !important;
+  }
+  
+  .__rd2 {
+    border-radius: 10px !important;
   }
 }
 

@@ -120,7 +120,7 @@ $item = $getVideoDetail; {
                 <div class="filter__sort p-0">
                   <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
                     <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
-                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort']) == 'asc' ? 'selected' : '') ?>>Cũ Nhất</option>
                   </select>
                 </div>
                 <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
@@ -147,7 +147,7 @@ $item = $getVideoDetail; {
               </div>
               <div id="vli-videos">
                 <?php foreach ($getVideoCategory as $key => $data) { ?>
-                  <div class="video-con <?= $data['video_id'] == $_GET['vdId'] ? 'active-con' : '' ?> d-flex align-items-center mb-2">
+                  <div class="video-con <?= $data['video_id'] == $_GET['vdId'] ? 'active-con' : '' ?> rounded-2 d-flex align-items-center mb-2">
                     <div class="thumb d-flex align-items-center">
                       <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $data['video_id'] ?>&cate=<?= $data['category_id'] ?>">
                         <img src="<?= $data['video_image'] ?>" alt="">
@@ -194,7 +194,7 @@ $item = $getVideoDetail; {
                 <div class="filter__sort p-0">
                   <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
                     <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
-                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort']) == 'asc' ? 'selected' : '') ?>>Cũ Nhất</option>
                   </select>
                 </div>
                 <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
