@@ -25,7 +25,8 @@ body {
 h2,
 h3,
 h4,
-i {
+i,
+figure {
   color: #000000 !important;
   font-weight: 500 !important;
   margin: 0 !important;
@@ -203,8 +204,12 @@ a.channel:hover {
   padding: 0 100px 0 100px;
 }
 
-#__phoneComment {
+.__phoneComment {
   display: none !important;
+}
+  
+.__rd2 {
+  border-radius: 10px !important;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -251,6 +256,18 @@ a.channel:hover {
 
   .container-video {
     padding: 0 0 0 0;
+  }
+
+  .__computerComment {
+    display: none !important;
+  }
+
+  .__phoneComment {
+    display: block !important;
+  }
+  
+  .__rd2 {
+    border-radius: 0 !important;
   }
 }
 

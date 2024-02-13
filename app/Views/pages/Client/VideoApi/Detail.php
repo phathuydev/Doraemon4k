@@ -120,19 +120,19 @@ $item = $getVideoDetail; {
         </div>
         <div class="mt-3 ms-1 me-1" id="__computerComment">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
-          <div class="mt-2 text-end">
-            <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+          <div class="mt-2 mb-1 text-end">
+            <form action="<?= $current_url ?>" method="post">
               <textarea id="editor" name="content"></textarea>
-              <?= (!empty($_SESSION['user_id_client']) ? '<div class="d-flex justify-content-between align-items-center mt-2">
-                        <div class="filter__sort p-0">
-                        <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
-                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET['vdId'] . '&slug=' . $_GET['slug'] . '&epi=' . $_GET['epi'] . '" ' . (empty($_GET['sort']) ? 'selected' : '') . '>Mới Nhất</option>
-                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET['vdId'] . '&slug=' . $_GET['slug'] . '&epi=' . $_GET['epi'] . '&sort=asc" ' . (!empty($_GET['sort'] == 'asc') ? 'selected' : '') . '>Cũ Nhất</option>
-                        </select>
-                        </div>
-                        <button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>
-                      </div>' :
-                '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="filter__sort p-0">
+                  <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                    <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                  </select>
+                </div>
+                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
+                  '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+              </div>
             </form>
           </div>
           <script>
@@ -143,54 +143,6 @@ $item = $getVideoDetail; {
               });
           </script>
           <?php include './app/Views/inc/Client/comment_computer.php'; ?>
-        </div>
-        <div class="mt-3 mb-2 rounded-2 ms-1 me-1" id="__phoneComment">
-          <a class="btn btn-light w-100 " data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-            <div class="text-start text-dark">
-              Bình luận <?= $countCommentVideo['count'] ?>
-            </div>
-            <?php $getOneCmt = $getOneComment; { ?>
-              <div class="text-start mt-2 mb-1 d-flex">
-                <img src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="30" height="30" alt="">
-                <span class="ms-2 text-dark"><?= $getOneCmt['content'] ?></span>
-              </div>
-            <?php } ?>
-          </a>
-          <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <p class="modal-title text-dark" style="font-weight: bold;" id="exampleModalToggleLabel">Bình luận</p>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0 bg-light">
-                  <div class="mt-3 text-end ms-3 me-3">
-                    <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
-                      <textarea id="editor_phone" name="content"></textarea>
-                      <?= (!empty($_SESSION['user_id_client']) ? '<div class="d-flex justify-content-between align-items-center mt-3">
-                        <div class="filter__sort p-0">
-                        <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
-                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET[''] . '&slug=' . $_GET[''] . '&epi=' . $_GET[''] . '" ' . (empty($_GET['sort'] ? 'selected' : '')) . '>Mới Nhất</option>
-                          <option value="' . _WEB_ROOT . '/videoApiDetail?vdId=' . $_GET[''] . '&slug=' . $_GET[''] . '&epi=' . $_GET[''] . '" ' . (empty($_GET['sort'] ? 'selected' : '')) . '>Cũ Nhất</option>
-                        </select>
-                        </div>
-                        <button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>
-                      </div>' :
-                        '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
-                    </form>
-                  </div>
-                  <script>
-                    ClassicEditor
-                      .create(document.querySelector('#editor_phone'))
-                      .catch(error => {
-                        console.error(error);
-                      });
-                  </script>
-                  <?php include './app/Views/inc/Client/comment_phone.php'; ?>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12 p-0">
@@ -210,6 +162,33 @@ $item = $getVideoDetail; {
               </div>
             </div>
           <?php } ?>
+        </div>
+      </div>
+      <div class="col-12 p-0 __phoneComment border-top pt-2 p-0">
+        <div class="ms-1 me-1">
+          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
+          <div class="mt-2 mb-1 text-end">
+            <form action="<?= $current_url ?>" method="post">
+              <textarea id="editorPhone" name="content"></textarea>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="filter__sort p-0">
+                  <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                  </select>
+                </div>
+                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
+                  '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+              </div>
+            </form>
+          </div>
+          <script>
+            ClassicEditor
+              .create(document.querySelector('#editorPhone')).catch(error => {
+                console.error(error);
+              });
+          </script>
+          <?php include './app/Views/inc/Client/comment_phone.php'; ?>
         </div>
       </div>
     </div>

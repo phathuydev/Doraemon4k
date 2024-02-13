@@ -18,6 +18,8 @@ class AuthController extends BaseController
   }
   public function index()
   {
+    // Bắt đầu output buffering
+    ob_start();
     if (isset($_POST['email']) && isset($_POST['password'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -51,6 +53,8 @@ class AuthController extends BaseController
   }
   public function signup()
   {
+    // Bắt đầu output buffering
+    ob_start();
     if (isset($_POST['nameSignup']) && isset($_POST['emailSignup']) && isset($_POST['passwordSignup'])) {
       $name = $_POST['nameSignup'];
       $email = $_POST['emailSignup'];
@@ -112,6 +116,8 @@ class AuthController extends BaseController
   }
   public function forgot()
   {
+    // Bắt đầu output buffering
+    ob_start();
     if (isset($_POST['emailForgot'])) {
       $checkEmailForgot = $this->province->getUserSignin($_POST['emailForgot']);
       if ($checkEmailForgot) {

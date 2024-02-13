@@ -11,11 +11,11 @@ $item = $getVideoDetail; {
   <section class="trending-podcast-section container-video mt-5" style="margin-bottom: 180px;">
     <div class="row m-0">
       <div class="col-lg-8 col-sm-12 mt-2 p-0">
-        <video id="video_controls" width="100%" controls playsinline>
+        <video id="video_controls" width="100%" class="__rd2" controls playsinline>
           <source src="<?= $video_path ?>" type="video/mp4">
         </video>
-        <p class="text-dark mt-2 mb-3 h5 font-weight-bold ps-2 pe-2 ps-md-0 pe-md-0 ps-lg-0 pe-lg-0"><?= $video_title ?></p>
-        <div class="d-flex justify-content-between align-items-center ps-2 pe-2 ps-md-0 pe-md-0 ps-lg-0 pe-lg-0">
+        <p class="text-dark mt-2 mb-3 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
+        <div class="d-flex justify-content-between align-items-center ps-2 pe-2">
           <div class="d-flex justify-content-center align-items-center">
             <a href="https://www.facebook.com/anhzachdeptrainhatthegioi/"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" width="100" alt=""></a>
             <span class="ms-2 text-dark"><img src="<?= _WEB_ROOT ?>/public/client/images/verified.png" class="owl-carousel-verified-image img-fluid" width="20" alt=""></span>
@@ -101,7 +101,7 @@ $item = $getVideoDetail; {
             <?php endif; ?>
           </div>
         </div>
-        <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-3 ms-1 me-1 ms-md-0 me-md-0 ms-lg-0 me-lg-0">
+        <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-2 ms-1 me-1 mb-md-2">
           <div class="d-flex align-items-center">
             <span class="text-white me-2" style="font-size: 14px;"><?= !empty($countViewVideo) ? formatView($countViewVideo) : 0 ?> lượt xem</span>
             <span class="text-white" style="font-size: 14px;"><?= formatTimeAgo(strtotime($created_at_video)) ?></span>
@@ -111,11 +111,36 @@ $item = $getVideoDetail; {
           </div>
           <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
         </div>
+        <div class="ms-1 me-1 __computerComment">
+          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
+          <div class="mt-2 text-end">
+            <form action="<?= $current_url ?>" method="post">
+              <textarea id="editor" name="content"></textarea>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="filter__sort p-0">
+                  <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                  </select>
+                </div>
+                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
+                  '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+              </div>
+            </form>
+          </div>
+          <script>
+            ClassicEditor
+              .create(document.querySelector('#editor')).catch(error => {
+                console.error(error);
+              });
+          </script>
+          <?php include './app/Views/inc/Client/comment_computer.php'; ?>
+        </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12 p-0">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-1">
-            <div class="bg-black bg-opacity-10 pt-2 pb-2 ms-1 me-1">
+      <div class="col-lg-4 col-md-12 col-sm-12 p-0 mb-2">
+        <div class="row m-0">
+          <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-1 p-0">
+            <div class="bg-black bg-opacity-10 pt-2 pb-2 ms-1 me-1 rounded-2">
               <div class="d-flex align-items-center justify-content-between mb-2">
                 <div class="title ms-2">Danh Sách Phát</div>
                 <div class="me-3" id="chevron-down"><i class="fa fa-chevron-up"></i></div>
@@ -139,13 +164,13 @@ $item = $getVideoDetail; {
               </div>
             </div>
           </div>
-          <div class="col-12 mt-2 mb-1">
+          <div class="col-12 mt-2 mb-1 p-0">
             <div class="title ms-2">Phim Khác</div>
             <?php foreach ($getAllVideo as $key => $data) { ?>
-              <div class="video-con d-flex align-items-center mt-2 ms-1 me-1">
+              <div class="video-con d-flex align-items-center mt-2 ms-1 me-1 rounded-2">
                 <div class="thumb d-flex align-items-center">
                   <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $data['video_id'] ?>&cate=<?= $data['category_id'] ?>">
-                    <img src="<?= $data['video_image'] ?>" alt="">
+                    <img class="rounded-2" src="<?= $data['video_image'] ?>" alt="">
                   </a>
                 </div>
                 <div class="v-titles ms-2">
@@ -159,7 +184,35 @@ $item = $getVideoDetail; {
           </div>
         </div>
       </div>
+      <div class="col-12 p-0 __phoneComment border-top pt-2 p-0">
+        <div class="ms-1 me-1">
+          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
+          <div class="mt-2 mb-1 text-end">
+            <form action="<?= $current_url ?>" method="post">
+              <textarea id="editorPhone" name="content"></textarea>
+              <div class="d-flex justify-content-between align-items-center mt-2">
+                <div class="filter__sort p-0">
+                  <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
+                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort'] == 'asc') ? 'selected' : '') ?>>Cũ Nhất</option>
+                  </select>
+                </div>
+                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
+                  '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
+              </div>
+            </form>
+          </div>
+          <script>
+            ClassicEditor
+              .create(document.querySelector('#editorPhone')).catch(error => {
+                console.error(error);
+              });
+          </script>
+          <?php include './app/Views/inc/Client/comment_phone.php'; ?>
+        </div>
+      </div>
+    </div>
   </section>
-<?php } 
+<?php }
 ob_end_flush();
 ?>

@@ -66,7 +66,7 @@ class VideoApiController extends BaseController
         'content' => $_POST['content'],
       ];
       $this->province->update('comments', $data, 'comment_id', $_POST['comment_id']);
-    } 
+    }
     $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
     $urlDetail = 'https://ophim1.com/phim/' . $_GET['slug'] . '';
@@ -78,7 +78,6 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['video_detail_css'] = '<link rel="stylesheet" href="' . _WEB_ROOT . '/public/client/css/videoDetail.css">';
     $this->data['subcontent']['getAllComment'] = $this->province->getAllComment($_GET['vdId'], (!empty($_GET['sort']) ? $_GET['sort'] : 'DESC'));
     $this->data['subcontent']['countCommentVideo'] = $this->province->countCommentVideo($_GET['vdId']);
-    $this->data['subcontent']['getOneComment'] = $this->province->getOneComment($_GET['vdId']);
     $this->data['subcontent']['getVideoDetail'] = $this->province->getVideoDetail($_GET['vdId']);
     $this->data['subcontent']['countViewVideo'] = $this->province->countViewVideo($_GET['vdId']);
     $this->data['subcontent']['countLikeVideo'] = $this->province->countLikeVideo($_GET['vdId']);

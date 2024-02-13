@@ -21,11 +21,6 @@ class VideoModel extends BaseModel
     $data = $this->getOne('comments', 'video_id', $video_id, 'COUNT(video_id) as count');
     return $data;
   }
-  public function getOneComment($video_id)
-  {
-    $data = $this->getOne('comments', 'parent_id = 0 AND user_id_reply = 0 AND video_id', '' . $video_id . ' ORDER BY created_at DESC');
-    return $data;
-  }
   public function getAllComment($video_id, $order_by = 'DESC')
   {
     $data = $this->getAll('comments INNER JOIN users ON comments.user_id = users.user_id WHERE video_id = ' . $video_id . ' AND parent_id = 0 AND user_id_reply = 0 ORDER BY comments.created_at ' . $order_by . '');

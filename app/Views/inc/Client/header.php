@@ -22,6 +22,8 @@
   
   <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 
+  <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
   <?= isset($video_detail_css) ? $video_detail_css : '' ?>
 
   <?= isset($auth_css) ? $auth_css : '' ?>
@@ -41,5 +43,5 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body class="anthanhcuon" id="cont">
+<body class="anthanhcuon p-0" id="cont">
   <main>

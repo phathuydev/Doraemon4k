@@ -58,9 +58,11 @@
           <li class="site-footer-link-item">
             <a href="<?= _WEB_ROOT ?>" class="site-footer-link">Trang Chủ</a>
           </li>
-
           <li class="site-footer-link-item">
-            <a href="<?= _WEB_ROOT ?>/video?pages=1&sort=desc" class="site-footer-link">Tất Cả Phim</a>
+            <a href="<?= _WEB_ROOT ?>/video?pages=1&sort=desc" class="site-footer-link">Phim Doraemon</a>
+          </li>
+          <li class="site-footer-link-item">
+            <a href="<?= _WEB_ROOT ?>/videoApi?pages=1&sort=desc" class="site-footer-link">Phim Khác</a>
           </li>
         </ul>
       </div>

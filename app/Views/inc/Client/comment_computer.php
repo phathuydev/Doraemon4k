@@ -1,4 +1,4 @@
-<div class="row m-0 mt-md-3 bg-light p-3 rounded-2">
+<div class="row m-0 mt-md-3 <?= $countCommentVideo['count'] > 0 ? 'border' : '' ?> p-3 rounded-2">
   <div class="col-md-12 col-lg-10 col-xl-8">
     <div class="card-body">
       <div class="row">
@@ -35,7 +35,7 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                          <form action="<?= $current_url ?>" method="post">
                             <textarea id="reply__<?= $item['comment_id'] ?>" name="content_reply"></textarea>
                             <input type="hidden" name="parent_id" value="<?= $item['comment_id'] ?>">
                             <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
@@ -61,7 +61,7 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                          <form action="<?= $current_url ?>" method="post">
                             <textarea id="reply2__<?= $item['comment_id'] ?>" name="content_reply"></textarea>
                             <input type="hidden" name="parent_id" value="<?= $item['comment_id'] ?>">
                             <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
@@ -87,7 +87,7 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                          <form action="<?= $current_url ?>" method="post">
                             <textarea id="edit__<?= $item['comment_id'] ?>" name="content"><?= $item['content'] ?></textarea>
                             <input type="hidden" name="comment_id" value="<?= $item['comment_id'] ?>">
                             <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
@@ -113,7 +113,7 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                          <form action="<?= $current_url ?>" method="post">
                             <input type="hidden" name="comment_id" value="<?= $item['comment_id'] ?>">
                             <button type="button" class="btn btn-danger text-white p-1 border-0 rounded-1" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
                             <button type="submit" name="delete" class="btn btn-dark text-white p-1 border-0 rounded-1">Xóa</button>
@@ -154,7 +154,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="reply3__<?= $data['comment_id'] ?>" name="content_reply"></textarea>
                                     <input type="hidden" name="parent_id" value="<?= $data['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $data['comment_id'] ?>">
@@ -181,7 +181,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="reply4__<?= $data['comment_id'] ?>" name="content_reply"></textarea>
                                     <input type="hidden" name="parent_id" value="<?= $data['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $data['comment_id'] ?>">
@@ -208,7 +208,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="edit2__<?= $data['comment_id'] ?>" name="content"><?= $data['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $data['comment_id'] ?>">
                                     <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
@@ -234,7 +234,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <input type="hidden" name="comment_id" value="<?= $data['comment_id'] ?>">
                                     <button type="button" class="btn btn-danger text-white p-1 border-0 rounded-1" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
                                     <button type="submit" name="delete" class="btn btn-dark text-white p-1 border-0 rounded-1">Xóa</button>
@@ -283,7 +283,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="reply5__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
                                     <input type="hidden" name="parent_id" value="<?= $value['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $value['grandParent_id'] ?>">
@@ -311,7 +311,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="reply6__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
                                     <input type="hidden" name="parent_id" value="<?= $value['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $value['grandParent_id'] ?>">
@@ -339,7 +339,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <textarea id="edit3__<?= $value['comment_id'] ?>" name="content"><?= $value['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $value['comment_id'] ?>">
                                     <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
@@ -365,7 +365,7 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>" method="post">
+                                  <form action="<?= $current_url ?>" method="post">
                                     <input type="hidden" name="comment_id" value="<?= $value['comment_id'] ?>">
                                     <button type="button" class="btn btn-danger text-white p-1 border-0 rounded-1" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
                                     <button type="submit" name="delete" class="btn btn-dark text-white p-1 border-0 rounded-1">Xóa</button>
