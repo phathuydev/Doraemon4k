@@ -29,7 +29,9 @@ ob_start();
                     <td><?= $offset++ ?></td>
                     <td><img src="<?= $video_image ?>" width="120" alt=""></td>
                     <td>
-                      <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $video_id ?>&cate=<?= $category_id ?>"><?= $video_title ?></a>
+                      <div class="truncate-text-1">
+                        <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $video_id ?>&cate=<?= $category_id ?>"><?= $video_title ?></a>
+                      </div>
                     </td>
                     <td>
                       <?= $category_name ?>

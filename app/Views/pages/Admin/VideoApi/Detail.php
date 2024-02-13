@@ -11,11 +11,9 @@ ob_start();
           $getVideoSlug = $this->province->getVideoSlug($slug);
         ?>
           <div class="mb-3">
-            <p>
               <?php $value = $episodes; { ?>
-                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" width="50%" height="300px" allowfullscreen></iframe>
+                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
               <?php } ?>
-            </p>
             <p>Xem trước</p>
             <p>
               <?php foreach ($episodes as $items) {
