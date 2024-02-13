@@ -22,6 +22,9 @@
           <a href="<?= _WEB_ROOT ?>/userManage?pages=1" class="nav-item nav-link text-white small <?= isset($user) ? 'active' : false ?>">
             <i class="fa fa-user ms-1 me-2"></i>Người Dùng
           </a>
+          <a href="<?= _WEB_ROOT ?>/commentManage?pages=1" class="nav-item nav-link text-white small <?= isset($comment) ? 'active' : false ?>">
+            <i class="fa fa-comment ms-1 me-2"></i>Bình luận
+          </a>
           <a href="<?= _WEB_ROOT ?>/videoManage?pages=1" class="nav-item nav-link text-white small <?= isset($video) ? 'active' : false ?>">
             <i class="fa fa-film ms-1 me-2"></i>Phim Của Tôi
           </a>

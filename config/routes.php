@@ -10,6 +10,7 @@ use App\Controllers\Client\AuthController as AuthClientController;
 use App\Controllers\Client\VideoController as VideoClientController;
 use App\Controllers\Client\VideoApiController as VideoApiClientController;
 use App\Controllers\Admin\UserController as UserAdminController;
+use App\Controllers\Admin\CommentController as CommentAdminController;
 use App\Controllers\Admin\VideoController as VideoAdminController;
 use App\Controllers\Admin\VideoApiController as VideoApiAdminController;
 use App\Controllers\Admin\ApiController as ApiAdminController;
@@ -42,6 +43,8 @@ class routes
             ->get('/videoSearch', [VideoClientController::class, 'search'])
             ->get('/userManage', [UserAdminController::class, 'index'])
             ->get('/searchUserManage', [UserAdminController::class, 'search'])
+            ->get('/commentManage', [CommentAdminController::class, 'index'])
+            ->post('/commentManage', [CommentAdminController::class, 'index'])
             ->get('/ApiManage', [ApiAdminController::class, 'index'])
             ->post('/ApiManage', [ApiAdminController::class, 'index'])
             ->get('/DetailMovie', [ApiAdminController::class, 'detail'])
