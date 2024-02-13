@@ -13,13 +13,13 @@ ob_start();
           <div class="mb-3">
             <p>
               <?php $value = $episodes; { ?>
-                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" allowfullscreen></iframe>
+                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" width="50%" height="300px" allowfullscreen></iframe>
               <?php } ?>
             </p>
             <p>Xem trước</p>
             <p>
               <?php foreach ($episodes as $items) {
-                if (isset($items['slug']) && $items['slug'] !== 'full') : ?>
+                if (!empty($items['slug']) && $items['slug'] !== 'full') : ?>
                   <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= isset($_GET['slug']) ? $_GET['slug'] : '' ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" class="btn btn-dark text-white me-1 mb-2 <?= (isset($_GET['epi']) && $_GET['epi'] == $items['slug']) ? 'selected' : ''; ?>">Tập <?= $items['name'] ?></a>
               <?php endif;
               } ?>
