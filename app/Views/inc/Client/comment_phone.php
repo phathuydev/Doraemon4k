@@ -35,19 +35,15 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="<?= $current_url ?>" method="post">
-                            <textarea id="reply7__<?= $item['comment_id'] ?>" name="content_reply"></textarea>
+                          <form onsubmit="return validateForm14()" action="<?= $current_url ?>" method="post">
+                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment14" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                            <div class="text-start">
+                              <span id="commentError14" class="text-danger"></span>
+                            </div>
                             <input type="hidden" name="parent_id" value="<?= $item['comment_id'] ?>">
-                            <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                            <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                           </form>
                         </div>
-                        <script>
-                          ClassicEditor
-                            .create(document.querySelector("#reply7__<?= $item['comment_id'] ?>"))
-                            .catch(error => {
-                              console.error(error);
-                            });
-                        </script>
                       </div>
                     </div>
                   </div>
@@ -61,19 +57,15 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="<?= $current_url ?>" method="post">
-                            <textarea id="reply8__<?= $item['comment_id'] ?>" name="content_reply"></textarea>
+                          <form onsubmit="return validateForm15()" action="<?= $current_url ?>" method="post">
+                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment15" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                            <div class="text-start">
+                              <span id="commentError15" class="text-danger"></span>
+                            </div>
                             <input type="hidden" name="parent_id" value="<?= $item['comment_id'] ?>">
-                            <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                            <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                           </form>
                         </div>
-                        <script>
-                          ClassicEditor
-                            .create(document.querySelector("#reply8__<?= $item['comment_id'] ?>"))
-                            .catch(error => {
-                              console.error(error);
-                            });
-                        </script>
                       </div>
                     </div>
                   </div>
@@ -87,19 +79,12 @@
                       </div>
                       <div class="modal-body">
                         <div class="text-end">
-                          <form action="<?= $current_url ?>" method="post">
-                            <textarea id="edit4__<?= $item['comment_id'] ?>" name="content"><?= $item['content'] ?></textarea>
+                          <form onsubmit="return validateForm16()" action="<?= $current_url ?>" method="post">
+                            <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment16" maxlength="50" required><?= $item['content'] ?></textarea>
                             <input type="hidden" name="comment_id" value="<?= $item['comment_id'] ?>">
-                            <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
+                            <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                           </form>
                         </div>
-                        <script>
-                          ClassicEditor
-                            .create(document.querySelector("#edit4__<?= $item['comment_id'] ?>"))
-                            .catch(error => {
-                              console.error(error);
-                            });
-                        </script>
                       </div>
                     </div>
                   </div>
@@ -154,20 +139,16 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="reply9__<?= $data['comment_id'] ?>" name="content_reply"></textarea>
+                                  <form onsubmit="return validateForm17()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment17" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <div class="text-start">
+                                      <span id="commentError17" class="text-danger"></span>
+                                    </div>
                                     <input type="hidden" name="parent_id" value="<?= $data['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $data['comment_id'] ?>">
-                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#reply9__<?= $data['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>
@@ -181,20 +162,16 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="reply10__<?= $data['comment_id'] ?>" name="content_reply"></textarea>
+                                  <form onsubmit="return validateForm18()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment18" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <div class="text-start">
+                                      <span id="commentError18" class="text-danger"></span>
+                                    </div>
                                     <input type="hidden" name="parent_id" value="<?= $data['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $data['comment_id'] ?>">
-                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#reply10__<?= $data['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>
@@ -208,19 +185,12 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="edit5__<?= $data['comment_id'] ?>" name="content"><?= $data['content'] ?></textarea>
+                                  <form onsubmit="return validateForm19()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment19" maxlength="50" required><?= $data['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $data['comment_id'] ?>">
-                                    <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
+                                    <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#edit5__<?= $data['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>
@@ -283,21 +253,17 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="reply11__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
+                                  <form onsubmit="return validateForm20()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment20" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <div class="text-start">
+                                      <span id="commentError20" class="text-danger"></span>
+                                    </div>
                                     <input type="hidden" name="parent_id" value="<?= $value['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $value['grandParent_id'] ?>">
                                     <input type="hidden" name="user_id_reply" value="<?= $value['user_id'] ?>">
-                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#reply11__<?= $value['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>
@@ -311,21 +277,17 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="reply12__<?= $value['comment_id'] ?>" name="content_reply"></textarea>
+                                  <form onsubmit="return validateForm21()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment21" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <div class="text-start">
+                                      <span id="commentError21" class="text-danger"></span>
+                                    </div>
                                     <input type="hidden" name="parent_id" value="<?= $value['parent_id'] ?>">
                                     <input type="hidden" name="grandparent_id" value="<?= $value['grandParent_id'] ?>">
                                     <input type="hidden" name="user_id_reply" value="<?= $value['user_id'] ?>">
-                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Phản hồi</button>
+                                    <button type="submit" name="reply" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Phản hồi</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#reply12__<?= $value['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>
@@ -339,19 +301,12 @@
                               </div>
                               <div class="modal-body">
                                 <div class="text-end">
-                                  <form action="<?= $current_url ?>" method="post">
-                                    <textarea id="edit6__<?= $value['comment_id'] ?>" name="content"><?= $value['content'] ?></textarea>
+                                  <form onsubmit="return validateForm22()" action="<?= $current_url ?>" method="post">
+                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment22" maxlength="50" required><?= $value['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $value['comment_id'] ?>">
-                                    <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-3 rounded-1">Chỉnh sửa</button>
+                                    <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                                   </form>
                                 </div>
-                                <script>
-                                  ClassicEditor
-                                    .create(document.querySelector("#edit6__<?= $value['comment_id'] ?>"))
-                                    .catch(error => {
-                                      console.error(error);
-                                    });
-                                </script>
                               </div>
                             </div>
                           </div>

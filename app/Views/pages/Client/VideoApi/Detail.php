@@ -121,8 +121,11 @@ $item = $getVideoDetail; {
         <div class="mt-3 ms-1 me-1 __computerComment">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
-            <form action="<?= $current_url ?>" method="post">
-              <textarea id="editor" name="content"></textarea>
+            <form onsubmit="return validateForm1()" action="<?= $current_url ?>" method="post">
+              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment1" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+              <div class="text-start">
+                <span id="commentError1" class="text-danger"></span>
+              </div>
               <div class="d-flex justify-content-between align-items-center mt-2">
                 <div class="filter__sort p-0">
                   <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
@@ -135,13 +138,6 @@ $item = $getVideoDetail; {
               </div>
             </form>
           </div>
-          <script>
-            ClassicEditor
-              .create(document.querySelector('#editor'))
-              .catch(error => {
-                console.error(error);
-              });
-          </script>
           <?php include './app/Views/inc/Client/comment_computer.php'; ?>
         </div>
       </div>
@@ -168,8 +164,11 @@ $item = $getVideoDetail; {
         <div class="ms-1 me-1">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
-            <form action="<?= $current_url ?>" method="post">
-              <textarea id="editorPhone" name="content"></textarea>
+            <form onsubmit="return validateForm2()" action="<?= $current_url ?>" method="post">
+              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment2" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+              <div class="text-start">
+                <span id="commentError2" class="text-danger"></span>
+              </div>
               <div class="d-flex justify-content-between align-items-center mt-2">
                 <div class="filter__sort p-0">
                   <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
@@ -182,12 +181,6 @@ $item = $getVideoDetail; {
               </div>
             </form>
           </div>
-          <script>
-            ClassicEditor
-              .create(document.querySelector('#editorPhone')).catch(error => {
-                console.error(error);
-              });
-          </script>
           <?php include './app/Views/inc/Client/comment_phone.php'; ?>
         </div>
       </div>
