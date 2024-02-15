@@ -36,7 +36,7 @@
                       <div class="modal-body">
                         <div class="text-end">
                           <form onsubmit="return validateForm14()" action="<?= $current_url ?>" method="post">
-                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment14" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment14" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                             <div class="text-start">
                               <span id="commentError14" class="text-danger"></span>
                             </div>
@@ -58,7 +58,7 @@
                       <div class="modal-body">
                         <div class="text-end">
                           <form onsubmit="return validateForm15()" action="<?= $current_url ?>" method="post">
-                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment15" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                            <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment15" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                             <div class="text-start">
                               <span id="commentError15" class="text-danger"></span>
                             </div>
@@ -80,7 +80,7 @@
                       <div class="modal-body">
                         <div class="text-end">
                           <form onsubmit="return validateForm16()" action="<?= $current_url ?>" method="post">
-                            <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment16" maxlength="50" required><?= $item['content'] ?></textarea>
+                            <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment16" maxlength="30" required><?= $item['content'] ?></textarea>
                             <input type="hidden" name="comment_id" value="<?= $item['comment_id'] ?>">
                             <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                           </form>
@@ -140,7 +140,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm17()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment17" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment17" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                                     <div class="text-start">
                                       <span id="commentError17" class="text-danger"></span>
                                     </div>
@@ -163,7 +163,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm18()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment18" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment18" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                                     <div class="text-start">
                                       <span id="commentError18" class="text-danger"></span>
                                     </div>
@@ -186,7 +186,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm19()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment19" maxlength="50" required><?= $data['content'] ?></textarea>
+                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment19" maxlength="30" required><?= $data['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $data['comment_id'] ?>">
                                     <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                                   </form>
@@ -254,7 +254,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm20()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment20" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment20" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                                     <div class="text-start">
                                       <span id="commentError20" class="text-danger"></span>
                                     </div>
@@ -278,7 +278,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm21()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment21" maxlength="50" placeholder="Thể hiện ý kiến của bạn"></textarea>
+                                    <textarea name="content_reply" class="w-100 rounded-2 p-2" id="__contentComment21" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
                                     <div class="text-start">
                                       <span id="commentError21" class="text-danger"></span>
                                     </div>
@@ -302,7 +302,7 @@
                               <div class="modal-body">
                                 <div class="text-end">
                                   <form onsubmit="return validateForm22()" action="<?= $current_url ?>" method="post">
-                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment22" maxlength="50" required><?= $value['content'] ?></textarea>
+                                    <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment22" maxlength="30" required><?= $value['content'] ?></textarea>
                                     <input type="hidden" name="comment_id" value="<?= $value['comment_id'] ?>">
                                     <button type="submit" name="edit" class="btn btn-dark text-white p-1 border-0 mt-2 rounded-1">Chỉnh sửa</button>
                                   </form>
