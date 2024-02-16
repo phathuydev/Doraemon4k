@@ -112,11 +112,13 @@ $item = $getVideoDetail; {
           <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
         </div>
         <div class="text-center text-lg-start">
-          <?php foreach ($episodes as $items) {
-            if (isset($items['slug']) && $items['slug'] !== 'full') : ?>
-              <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= isset($_GET['vdId']) ? $_GET['vdId'] : '' ?>&slug=<?= isset($_GET['slug']) ? $_GET['slug'] : '' ?>&epi=<?= $items['slug'] ?>" class="p-2 rounded-1 text-white mb-1 mt-2 <?= (isset($_GET['epi']) && $_GET['epi'] == $items['slug']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['slug'] ?></a>
-          <?php endif;
-          } ?>
+          <div class="mt-2">
+            <?php foreach ($episodes as $items) {
+              if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (isset($_GET['epi']) && $_GET['epi'] == $items['slug']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
+            <?php endif;
+            } ?>
+          </div>
         </div>
         <div class="mt-3 ms-1 me-1 __computerComment">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
