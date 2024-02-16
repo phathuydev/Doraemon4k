@@ -114,9 +114,9 @@ $item = $getVideoDetail; {
         <div class="text-center text-lg-start">
           <div class="mt-2">
             <?php foreach ($episodes as $items) {
-              if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
-                <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (isset($_GET['epi']) && $_GET['epi'] == $items['slug']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
-            <?php endif;
+                if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                  <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
+                <?php endif;
             } ?>
           </div>
         </div>
