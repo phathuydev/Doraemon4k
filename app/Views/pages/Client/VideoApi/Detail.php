@@ -124,7 +124,7 @@ $item = $getVideoDetail; {
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
             <form onsubmit="return validateForm1()" action="<?= $current_url ?>" method="post">
-              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment1" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
+              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment1" maxlength="30" placeholder="Thể hiện ý kiến của bạn, tối đa 30 ký tự"></textarea>
               <div class="text-start">
                 <span id="commentError1" class="text-danger"></span>
               </div>
@@ -167,7 +167,7 @@ $item = $getVideoDetail; {
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
             <form onsubmit="return validateForm2()" action="<?= $current_url ?>" method="post">
-              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment2" maxlength="30" placeholder="Thể hiện ý kiến của bạn"></textarea>
+              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment2" maxlength="30" placeholder="Thể hiện ý kiến của bạn, tối đa 30 ký tự"></textarea>
               <div class="text-start">
                 <span id="commentError2" class="text-danger"></span>
               </div>
