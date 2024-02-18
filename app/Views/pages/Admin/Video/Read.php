@@ -25,7 +25,6 @@ $asp = new AppServiceProvider();
               </tr>
             </thead>
             <tbody>
-              <form method="post">
                 <?php foreach ($getAllVideo as $item) :
                   extract($item);
                 ?>
@@ -66,7 +65,6 @@ $asp = new AppServiceProvider();
                     </td>
                   </tr>
                 <?php endforeach ?>
-              </form>
             </tbody>
           </table>
         </div>

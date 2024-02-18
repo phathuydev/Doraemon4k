@@ -18,55 +18,53 @@ ob_start();
               </tr>
             </thead>
             <tbody>
-              <form method="post">
-                <?php foreach ($getAllComment as $item) :
-                  extract($item);
-                ?>
-                  <tr>
-                    <td><?= $offset++ ?></td>
-                    <td><?= $user_name ?></td>
-                    <td>
-                      <?php $getAllVideo = $this->province->getAllVideo($video_id); ?>
-                      <?php foreach ($getAllVideo as $data) {
-                        if ($data['video_form'] == 0) : ?>
-                          <div class="truncate-text-1">
-                            <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $data['video_id'] ?>&cate=<?= $data['category_id'] ?>"><?= $data['video_title'] ?></a>
+              <?php foreach ($getAllComment as $item) :
+                extract($item);
+              ?>
+                <tr>
+                  <td><?= $offset++ ?></td>
+                  <td><?= $user_name ?></td>
+                  <td>
+                    <?php $getAllVideo = $this->province->getAllVideo($video_id); ?>
+                    <?php foreach ($getAllVideo as $data) {
+                      if ($data['video_form'] == 0) : ?>
+                        <div class="truncate-text-1">
+                          <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $data['video_id'] ?>&cate=<?= $data['category_id'] ?>"><?= $data['video_title'] ?></a>
+                        </div>
+                      <?php else : ?>
+                        <div class="truncate-text-1">
+                          <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $data['video_id'] ?>&slug=<?= $data['video_slug'] ?>&epi=1"><?= $data['video_title'] ?></a>
+                        </div>
+                      <?php endif ?>
+                    <?php } ?>
+                  </td>
+                  <td>
+                    <?= $content ?>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteComment-<?= $video_id ?>">
+                      Xóa
+                    </button>
+                    <div class="modal fade" id="deleteComment-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header border-bottom-0">
+                            <p class="modal-title text-dark" id="exampleModalLabel">Xóa bình luận</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-                        <?php else : ?>
-                          <div class="truncate-text-1">
-                            <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $data['video_id'] ?>&slug=<?= $data['video_slug'] ?>&epi=1"><?= $data['video_title'] ?></a>
-                          </div>
-                        <?php endif ?>
-                      <?php } ?>
-                    </td>
-                    <td>
-                      <?= $content ?>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteComment-<?= $video_id ?>">
-                        Xóa
-                      </button>
-                      <div class="modal fade" id="deleteComment-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header border-bottom-0">
-                              <p class="modal-title text-dark" id="exampleModalLabel">Xóa bình luận</p>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
-                              <form action="/commentManage?pages=1" method="post">
-                                <input type="hidden" name="comment_id" value="<?= $comment_id ?>">
-                                <button type="submit" name="deleteComment" class="btn btn-primary">Xóa</button>
-                              </form>
-                            </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
+                            <form action="/commentManage?pages=1" method="post">
+                              <input type="hidden" name="comment_id" value="<?= $comment_id ?>">
+                              <button type="submit" name="deleteComment" class="btn btn-primary">Xóa</button>
+                            </form>
                           </div>
                         </div>
                       </div>
-                    </td>
-                  </tr>
-                <?php endforeach ?>
-              </form>
+                    </div>
+                  </td>
+                </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

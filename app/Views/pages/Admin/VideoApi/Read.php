@@ -23,43 +23,41 @@ $asp = new AppServiceProvider();
               </tr>
             </thead>
             <tbody>
-              <form method="post">
-                <?php foreach ($getAllVideo as $item) :
-                  extract($item);
-                ?>
-                  <tr>
-                    <td><?= $offset++ ?></td>
-                    <td><img src="<?= $video_image ?>" width="120" alt=""></td>
-                    <td>
-                      <p class="truncate-text-1"><?= $video_title ?></p>
-                    </td>
-                    <td><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></td>
-                    <td>
-                      <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= $video_slug ?>&pages=<?= $_GET['pages'] ?>&epi=1" class="btn btn-outline-warning text-white mb-1">Chi Tiết</a>
-                      <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">
-                        Xóa
-                      </button>
-                      <div class="modal fade" id="deleteVideo-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header border-bottom-0">
-                              <p class="modal-title text-dark" id="exampleModalLabel">Xóa Video</p>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
-                              <form action="/videoApiManage?pages=1" method="post">
-                                <input type="hidden" name="video_id" value="<?= $video_id ?>">
-                                <button type="submit" name="deleteVideo" class="btn btn-primary">Xóa</button>
-                              </form>
-                            </div>
+              <?php foreach ($getAllVideo as $item) :
+                extract($item);
+              ?>
+                <tr>
+                  <td><?= $offset++ ?></td>
+                  <td><img src="<?= $video_image ?>" width="120" alt=""></td>
+                  <td>
+                    <p class="truncate-text-1"><?= $video_title ?></p>
+                  </td>
+                  <td><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></td>
+                  <td>
+                    <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= $video_slug ?>&pages=<?= $_GET['pages'] ?>&epi=1" class="btn btn-outline-warning text-white mb-1">Chi Tiết</a>
+                    <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">
+                      Xóa
+                    </button>
+                    <div class="modal fade" id="deleteVideo-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header border-bottom-0">
+                            <p class="modal-title text-dark" id="exampleModalLabel">Xóa Video</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
+                            <form action="/videoApiManage?pages=<?= $_GET['pages'] ?>" method="post">
+                              <input type="hidden" name="video_id" value="<?= $video_id ?>">
+                              <button type="submit" name="deleteVideo" class="btn btn-primary">Xóa</button>
+                            </form>
                           </div>
                         </div>
                       </div>
-                    </td>
-                  </tr>
-                <?php endforeach ?>
-              </form>
+                    </div>
+                  </td>
+                </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>
