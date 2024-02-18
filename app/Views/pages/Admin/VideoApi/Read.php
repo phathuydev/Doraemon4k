@@ -1,7 +1,10 @@
 <?php
 ob_start();
+
+use App\Core\AppServiceProvider;
+
+$asp = new AppServiceProvider();
 ?>
-<!-- Table Start -->
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
     <div class="col-sm-12 col-xl-12">
@@ -30,7 +33,7 @@ ob_start();
                     <td>
                       <p class="truncate-text-1"><?= $video_title ?></p>
                     </td>
-                    <td><?= formatTimeAgo(strtotime($created_at_video)) ?></td>
+                    <td><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></td>
                     <td>
                       <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= $video_slug ?>&pages=<?= $_GET['pages'] ?>&epi=1" class="btn btn-outline-warning text-white mb-1">Chi Tiết</a>
                       <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">

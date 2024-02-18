@@ -1,5 +1,9 @@
 <?php
 ob_start();
+
+use App\Core\AppServiceProvider;
+
+$asp = new AppServiceProvider();
 ?>
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
@@ -7,8 +11,8 @@ ob_start();
       <div class="bg-secondary rounded h-100 p-4">
         <h6 class="mb-4"><?= isset($pages_title) ? $pages_title : 'Bảng chưa có tên' ?></h6>
         <?= (!empty($msg)) ? '<p class="text-danger">' . $msg . '</p>' : false; ?>
-        <a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/videoManage?pages=1')" class="btn mb-3 btn-outline-info text-white">Trở Lại</a>
-        <a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/categoryManage/createCategory')" class="btn mb-3 btn-outline-light text-white ms-1`">Thêm</a>
+        <a href="<?= _WEB_ROOT ?>/videoManage?pages=1" class="btn mb-3 btn-outline-info text-white">Trở Lại</a>
+        <a href="<?= _WEB_ROOT ?>/categoryManage/createCategory" class="btn mb-3 btn-outline-light text-white">Thêm</a>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -28,7 +32,7 @@ ob_start();
                   <td><?= $offset++ ?></td>
                   <td><img src="<?= $category_image ?>" width="100" alt=""></td>
                   <td><?= $category_name ?></td>
-                  <td><?= formatTimeAgo(strtotime($created_at)) ?></td>
+                  <td><?= $asp->formatTimeAgo(strtotime($created_at)) ?></td>
                   <td>
                     <?php if (!empty($category_id) > 0) : ?>
                       <a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/categoryManage/updateCategory?cateId=<?= $category_id ?>')" class="btn btn-outline-warning">Sửa</a>

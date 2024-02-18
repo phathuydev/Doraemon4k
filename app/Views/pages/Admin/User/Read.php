@@ -1,5 +1,9 @@
 <?php
 ob_start();
+
+use App\Core\AppServiceProvider;
+
+$asp = new AppServiceProvider();
 ?>
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
@@ -26,7 +30,7 @@ ob_start();
                   <td><?= $user_name ?></td>
                   <td><?= $user_email ?></td>
                   <td><?= $user_role == 2 ? 'Quản trị viên' : 'Người dùng' ?></td>
-                  <td><?= formatTimeAgo(strtotime($created_at)) ?></td>
+                  <td><?= $asp->formatTimeAgo(strtotime($created_at)) ?></td>
                 </tr>
               <?php endforeach ?>
             </tbody>

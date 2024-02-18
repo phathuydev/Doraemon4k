@@ -11,14 +11,14 @@ ob_start();
           $getVideoSlug = $this->province->getVideoSlug($slug);
         ?>
           <div class="mb-3">
-              <?php $value = $episodes; { ?>
-                <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
-              <?php } ?>
+            <?php $value = $episodes; { ?>
+              <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+            <?php } ?>
             <p>Xem trước</p>
             <p>
               <?php foreach ($episodes as $items) {
-                if (!empty($items['slug']) && $items['slug'] !== 'full') : ?>
-                  <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= isset($_GET['slug']) ? $_GET['slug'] : '' ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" class="btn btn-dark text-white me-1 mb-2 <?= (isset($_GET['epi']) && $_GET['epi'] == $items['slug']) ? 'selected' : ''; ?>">Tập <?= $items['name'] ?></a>
+                if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                  <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= $_GET['slug'] ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" class="btn btn-dark text-white me-1 mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>">Tập <?= $items['name'] ?></a>
               <?php endif;
               } ?>
             </p>

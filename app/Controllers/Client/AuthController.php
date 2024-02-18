@@ -5,6 +5,7 @@ namespace App\Controllers\Client;
 use App\Controllers\BaseController;
 use App\Models\Client\AuthModel;
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class AuthController extends BaseController
 {
@@ -55,6 +56,7 @@ class AuthController extends BaseController
   {
     // Bắt đầu output buffering
     ob_start();
+    
     if (isset($_POST['nameSignup']) && isset($_POST['emailSignup']) && isset($_POST['passwordSignup'])) {
       $name = $_POST['nameSignup'];
       $email = $_POST['emailSignup'];
@@ -71,10 +73,6 @@ class AuthController extends BaseController
         <p>Cảm ơn bạn đã đăng ký tài khoản!.</p>
         <div style="margin: 50px;"><img src="https://i.pinimg.com/originals/69/90/ad/6990ad3d2ed49eacdc008196b4024bbe.gif" style="width: 100%;"></div>
         </div>';
-
-        require_once './app/Core/PHPMailer-master/src/Exception.php';
-        require_once './app/Core/PHPMailer-master/src/PHPMailer.php';
-        require_once './app/Core/PHPMailer-master/src/SMTP.php';
 
         $email = $_POST['emailSignup'];
         $mail = new PHPMailer();
@@ -118,6 +116,7 @@ class AuthController extends BaseController
   {
     // Bắt đầu output buffering
     ob_start();
+
     if (isset($_POST['emailForgot'])) {
       $checkEmailForgot = $this->province->getUserSignin($_POST['emailForgot']);
       if ($checkEmailForgot) {
@@ -127,10 +126,6 @@ class AuthController extends BaseController
         <p><button style="padding: 7px; background-color: black;"><a style="text-decoration: none; color: #fff;" href="' . _WEB_ROOT . '/changePassword">
         Nhấn vào đây để thay đổi mật khẩu</a></button></p>
         <p>Nếu bạn không có yêu cầu đổi mật khẩu, vui lòng bỏ qua thông báo này!.</p></div>';
-
-        require_once './app/Core/PHPMailer-master/src/Exception.php';
-        require_once './app/Core/PHPMailer-master/src/PHPMailer.php';
-        require_once './app/Core/PHPMailer-master/src/SMTP.php';
 
         $email = $_POST['emailForgot'];
         $mail = new PHPMailer();

@@ -2,8 +2,10 @@
 ob_start();
 
 use Core\Form;
+use App\Core\AppServiceProvider;
 
 $form = new Form();
+$asp = new AppServiceProvider();
 
 $item = $getVideoDetail; {
   extract($item);
@@ -103,8 +105,8 @@ $item = $getVideoDetail; {
         </div>
         <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-2 ms-1 me-1 mb-md-2">
           <div class="d-flex align-items-center">
-            <span class="text-white me-2" style="font-size: 14px;"><?= !empty($countViewVideo) ? formatView($countViewVideo) : 0 ?> lượt xem</span>
-            <span class="text-white" style="font-size: 14px;"><?= formatTimeAgo(strtotime($created_at_video)) ?></span>
+            <span class="text-white me-2" style="font-size: 14px;"><?= !empty($countViewVideo) ? $asp->formatView($countViewVideo) : 0 ?> lượt xem</span>
+            <span class="text-white" style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
           </div>
           <div class="mt-2" id="longText">
             <span class="text-white" style="font-size: 14px;"><?= $video_describe ?></span>

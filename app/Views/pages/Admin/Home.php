@@ -1,5 +1,9 @@
 <?php
 ob_start();
+
+use App\Core\AppServiceProvider;
+
+$asp = new AppServiceProvider();
 ?>
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
@@ -8,7 +12,7 @@ ob_start();
         <i class="fa fa-user fa-2x text-primary"></i>
         <div class="ms-3">
           <p class="mb-2">Người Dùng Đăng Ký</p>
-          <h6 class="mb-0 float-end"><?= formatView($countUserDashboard) ?></h6>
+          <h6 class="mb-0 float-end"><?= $asp->formatView($countUserDashboard) ?></h6>
         </div>
       </div>
     </div>
@@ -17,7 +21,7 @@ ob_start();
         <i class="fa fa-eye fa-2x text-primary"></i>
         <div class="ms-3">
           <p class="mb-2">Tổng Lượt Xem</p>
-          <h6 class="mb-0 float-end"><?= formatView($countViewDashboard) ?></h6>
+          <h6 class="mb-0 float-end"><?= $asp->formatView($countViewDashboard) ?></h6>
         </div>
       </div>
     </div>
@@ -26,7 +30,7 @@ ob_start();
         <i class="fa fa-thumbs-up fa-2x text-primary"></i>
         <div class="ms-3">
           <p class="mb-2">Tổng Lượt Thích</p>
-          <h6 class="mb-0 float-end"><?= formatView($countLikeDashboard) ?></h6>
+          <h6 class="mb-0 float-end"><?= $asp->formatView($countLikeDashboard) ?></h6>
         </div>
       </div>
     </div>

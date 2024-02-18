@@ -2,8 +2,10 @@
 ob_start();
 
 use Core\Form;
+use App\Core\AppServiceProvider;
 
 $form = new Form();
+$asp = new AppServiceProvider();
 
 $item = $getVideoDetail; {
   extract($item);
@@ -104,7 +106,7 @@ $item = $getVideoDetail; {
         <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-2 ms-1 me-1">
           <div class="d-flex align-items-center">
             <span class="text-white me-2" style="font-size: 14px;"><?= $data['view'] ?> lượt xem</span>
-            <span class="text-white" style="font-size: 14px;"><?= formatTimeAgo(strtotime($created_at_video)) ?></span>
+            <span class="text-white" style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
           </div>
           <div class="mt-2" id="longText">
             <p class="m-0" style="font-size: 14px;"><?= $data['content'] ?></p>
@@ -114,9 +116,9 @@ $item = $getVideoDetail; {
         <div class="text-center text-lg-start">
           <div class="mt-2">
             <?php foreach ($episodes as $items) {
-                if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
-                  <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
-                <?php endif;
+              if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
+            <?php endif;
             } ?>
           </div>
         </div>

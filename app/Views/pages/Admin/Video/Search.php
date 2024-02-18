@@ -1,13 +1,17 @@
 <?php
 ob_start();
+
+use App\Core\AppServiceProvider;
+
+$asp = new AppServiceProvider();
 ?>
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
     <div class="col-sm-12 col-xl-12">
       <div class="bg-secondary rounded h-100 p-4">
         <h6 class="mb-4"><?= isset($pages_title) ? $pages_title : 'Bảng chưa có tên' ?></h6>
-        <a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/videoManage/createVideo')" class="btn mb-3 btn-outline-light text-white">Thêm Phim</a>
-        <a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/categoryManage?pages=1')" class="btn mb-3 btn-outline-info text-white ms-1">Danh Sách Phát</a>
+        <a href="<?= _WEB_ROOT ?>/videoManage/createVideo" class="btn mb-3 btn-outline-light text-white">Thêm Phim</a>
+        <a href="<?= _WEB_ROOT ?>/categoryManage?pages=1" class="btn mb-3 btn-outline-info text-white">Danh Sách Phát</a>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -36,7 +40,7 @@ ob_start();
                     <td>
                       <?= $category_name ?>
                     </td>
-                    <td><?= formatTimeAgo(strtotime($created_at_video)) ?></td>
+                    <td><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></td>
                     <td>
                       <a href="<?= _WEB_ROOT ?>/videoManage/updateVideo?vId=<?= $video_id ?>" class="btn btn-outline-light text-white mb-1">Sửa</a>
                       <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">

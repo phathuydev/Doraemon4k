@@ -15,5 +15,7 @@
             "email": "huylppc05334@fpt.edu.vn"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
 }
