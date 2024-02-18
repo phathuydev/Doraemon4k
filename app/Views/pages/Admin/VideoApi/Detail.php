@@ -17,7 +17,7 @@ ob_start();
             <p>Xem trước</p>
             <p>
               <?php foreach ($episodes as $items) {
-                if (isset($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
                   <a href="<?= _WEB_ROOT ?>/videoApiManageDetail?slug=<?= $_GET['slug'] ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" class="btn btn-dark text-white me-1 mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>">Tập <?= $items['name'] ?></a>
               <?php endif;
               } ?>
