@@ -13,10 +13,10 @@ ob_start();
         extract($item); ?>
         <?php if (!empty($video_slug)) : ?>
           <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-            <div class="custom-block custom-block-full mb-4">
+            <div class="custom-block custom-block-full bn5 mb-4">
               <div class="custom-block-image-wrap">
                 <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $video_id ?>&slug=<?= $video_slug ?>&epi=1">
-                  <img src="<?= $video_image ?>" class="custom-block-image img-fluid" alt="">
+                  <img src="<?= $video_image ?>" class="custom-block-image img-fluid rounded-4" alt="">
                 </a>
               </div>
               <div class="custom-block-info text-center">
@@ -30,10 +30,10 @@ ob_start();
           </div>
         <?php else : ?>
           <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-            <div class="custom-block custom-block-full mb-4">
+            <div class="custom-block custom-block-full bn5 mb-4">
               <div class="custom-block-image-wrap">
                 <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $video_id ?>&cate=<?= $category_id ?>">
-                  <img src="<?= $video_image ?>" class="custom-block-image img-fluid" alt="">
+                  <img src="<?= $video_image ?>" class="custom-block-image img-fluid rounded-4" alt="">
                 </a>
               </div>
               <div class="custom-block-info text-center">

@@ -47,8 +47,8 @@
                   <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
                 </div>
               </div>
-              <button type="submit" name="signin" class="btn btn-primary py-3 w-100 mb-3">Đăng nhập</button>
-              <a href="<?= _WEB_ROOT ?>/home" class="btn btn-warning py-3 w-100 mb-4">Trở Về</a>
+              <button type="submit" name="signin" class="bn632-hover bn24 py-3 w-100 mb-3 ">Đăng nhập</button>
+              <a href="<?= _WEB_ROOT ?>/home" class="btn btn-warning rounded-pill bn24 py-3 w-100 mb-4">Trở Về</a>
             </div>
           </form>
         </div>

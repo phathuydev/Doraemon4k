@@ -24,7 +24,7 @@ $form = new Form();
               <input type="password" name="password" class="form-control" id="passwordSignin" placeholder="Mật Khẩu">
               <?php $form->err('err_password_signin'); ?>
             </div>
-            <button type="button" id="signinClientId" data-href="<?= _WEB_ROOT ?>/signin" data-home="<?= _WEB_ROOT ?>/home" onclick="signinClient()">Đăng Nhập</button>
+            <button class="bn635-hover bn25 bn5" type="button" id="signinClientId" data-href="<?= _WEB_ROOT ?>/signin" data-home="<?= _WEB_ROOT ?>/home" onclick="signinClient()">Đăng Nhập</button>
           </form>
           <a href="<?= _WEB_ROOT ?>/forgotPassword" class="mt-2">Quên Mật Khẩu<br> </a>
           <div class="text-center mt-3">

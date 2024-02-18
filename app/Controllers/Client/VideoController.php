@@ -11,7 +11,6 @@ class VideoController extends BaseController
   public $data = [];
   public function __construct()
   {
-    $this->data['subcontent']['video'] = '';
     $this->model('Client', 'VideoModel');
     $this->province = new VideoModel();
   }
@@ -29,6 +28,7 @@ class VideoController extends BaseController
     $this->data['subcontent']['perPage'] = $perPage;
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset;
+    $this->data['subcontent']['video'] = '';
     $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideoList($_GET['sort'], $perPage, $offset, 0);
     $this->render('ClientMasterLayout', $this->data);
 
@@ -108,6 +108,7 @@ class VideoController extends BaseController
     $this->data['subcontent']['getVideoCategory'] = $this->province->getVideoCategoryDetail($_GET['cate'], 0);
     $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideo(0);
     $this->data['subcontent']['countLikeVideoWhereUserAndVideo'] = $countLikeVideoWhereUserAndVideo['count'];
+    $this->data['subcontent']['video'] = '';
     $this->render('ClientMasterLayout', $this->data);
 
     // Lấy dữ liệu đã được render và gửi đến output buffer

@@ -22,7 +22,7 @@ $form = new Form();
               <input type="text" class="form-control" name="emailForgot" id="emailForgot" placeholder="Email">
               <?php $form->err('err_email_forgot'); ?>
             </div>
-            <button id="forgotClientId" data-href="<?= _WEB_ROOT ?>/forgotPassword" onclick="forgotClient()" type="button">Tìm</button>
+            <button class="bn635-hover bn25 bn5" id="forgotClientId" data-href="<?= _WEB_ROOT ?>/forgotPassword" onclick="forgotClient()" type="button">Tìm</button>
           </form>
           <div class="text-center mt-2">
             <a href="<?= _WEB_ROOT ?>/signin">

@@ -36,7 +36,7 @@ $form = new Form();
         </li>
         <?php if (empty($_SESSION['user_id_client'])) { ?>
           <li class="nav-item mb-2">
-            <a href="<?= _WEB_ROOT ?>/signin" class="btn custom-btn custom-border-btn smoothscroll nav-link ms-lg-3">Đăng Nhập</a>
+            <a href="<?= _WEB_ROOT ?>/signin" class="nav-link">Đăng Nhập</a>
           </li>
           <li class="nav-item">
             <form action="<?= _WEB_ROOT ?>/videoSearch" method="get" class="custom-form search-form flex-fill mt-2" role="search">
@@ -86,7 +86,7 @@ $form = new Form();
           <div class="text-center mb-5 pb-2">
             <h2 class="text-white mb-1">Doraemon4k</h2>
             <p class="text-white mb-0">Trở về tuổi thơ cùng tôi nhé</p>
-            <a href="#section_2" class="btn custom-btn smoothscroll mt-3">Xem ngay</a>
+            <a href="#section_2" class="bn632-hover bn24 p-3 bn5 custom-btn smoothscroll mt-3">Xem ngay</a>
           </div>
           <div class="owl-carousel owl-theme">
             <div class="owl-carousel-info-wrap item">

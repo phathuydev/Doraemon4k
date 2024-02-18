@@ -24,7 +24,7 @@ $form = new Form();
               <input type="password" class="form-control" id="cpassword_new" placeholder="Nhập lại mật khẩu mới">
               <?php $form->err('err_cpassword_reset'); ?>
             </div>
-            <button class="mt-3" type="button" id="resetPassId" data-href="<?= _WEB_ROOT ?>/changePassword" data-login="<?= _WEB_ROOT ?>/signin" onclick="resetPass()">Thay Đổi</button>
+            <button class="mt-3 bn635-hover bn25 bn5" type="button" id="resetPassId" data-href="<?= _WEB_ROOT ?>/changePassword" data-login="<?= _WEB_ROOT ?>/signin" onclick="resetPass()">Thay Đổi</button>
           </form>
         </div>
       </div>
