@@ -27,15 +27,6 @@ input {
     height: 100%;
 }
 
-.anthanhcuon {
-    width: 100%;
-    /* Chiều rộng của nội dung */
-    height: 100%;
-    /* Chiều cao của nội dung */
-    overflow-y: scroll;
-    /* Hiển thị thanh cuộn dọc tùy chỉnh */
-}
-
 .selected {
     background-color: #ffcc00;
     color: #000000 !important;
@@ -92,6 +83,15 @@ input {
 .__overflow-x::-webkit-scrollbar {
     width: 0;
     /* Chiều rộng của thanh cuộn tùy chỉnh */
+}
+
+.anthanhcuon {
+    width: 100%;
+    /* Chiều rộng của nội dung */
+    height: 100%;
+    /* Chiều cao của nội dung */
+    overflow-y: scroll;
+    /* Hiển thị thanh cuộn dọc tùy chỉnh */
 }
 
 /* Tạo thanh cuộn tùy chỉnh */

@@ -14,7 +14,7 @@ $form = new Form();
       <div class="input-group input-group-lg" id="d-sm-none">
         <input type="hidden" name="pages" value="1">
         <input type="hidden" name="sort" value="desc" id="">
-        <input name="kw" type="search" class="form-control" id="kw" placeholder="Tìm Phim Theo Tên..." aria-label="Search">
+        <input name="kw" type="search" class="form-control rounded-start" id="kw" placeholder="Tìm Phim Theo Tên..." aria-label="Search">
         <button type="submit" class="form-control" id="submit">
           <i class="bi-search"></i>
         </button>

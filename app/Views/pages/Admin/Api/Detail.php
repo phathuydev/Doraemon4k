@@ -18,11 +18,15 @@ ob_start();
             </p>
             <p>Xem trước</p>
             <p>
-              <?php foreach ($episodes as $items) {
-                if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
-                  <a href="<?= _WEB_ROOT ?>/DetailMovie?slug=<?= $_GET['slug'] ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" class="btn btn-dark text-white me-1 mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>">Tập <?= $items['name'] ?></a>
-              <?php endif;
-              } ?>
+            <?php if (!empty($episodes[0]['name'] == 1)) : ?>
+              <select class="form-select mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
+                <?php foreach ($episodes as $items) {
+                  if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                    <option value="<?= _WEB_ROOT ?>/DetailMovie?slug=<?= $_GET['slug'] ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>>Tập <?= $items['name'] ?></option>
+                <?php endif;
+                } ?>
+              </select>
+            <?php endif ?>
             </p>
             <p>Cập Nhật: <?= date('H:i:s d-m-Y', strtotime($modified['time'])); ?></p>
             <p>Danh Mục: <?= $type ?></p>

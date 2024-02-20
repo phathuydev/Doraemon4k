@@ -16,7 +16,7 @@ $item = $getVideoDetail; {
         <?php $value = $episodes; { ?>
           <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" width="100%" class="embed-responsive-item" frameborder="0" allowfullscreen playsinline></iframe>
         <?php } ?>
-        <p class="text-dark mt-2 mb-3 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
+        <p class="text-dark mt-2 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
         <div class="d-flex justify-content-between align-items-center ps-2 pe-2">
           <div class="d-flex justify-content-center align-items-center">
             <a href="https://www.facebook.com/anhzachdeptrainhatthegioi/"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" width="100" alt=""></a>
@@ -113,13 +113,18 @@ $item = $getVideoDetail; {
           </div>
           <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
         </div>
-        <div class="text-center text-lg-start">
+        <div class="text-lg-start ms-2 me-2">
           <div class="mt-2">
-            <?php foreach ($episodes as $items) {
-              if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
-                <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" class="p-2 rounded-1 text-white mb-1 <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : 'bg-dark'; ?>">Tập <?= $items['name'] ?></a>
-            <?php endif;
-            } ?>
+            <?php if (!empty($episodes[0]['name'] == 1)) : ?>
+              <label for="" class="form-label ms-1" style="font-weight: 500;">Xem Tiếp</label>
+              <select class="form-select mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
+                <?php foreach ($episodes as $items) {
+                  if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
+                    <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>>Tập <?= $items['name'] ?></option>
+                <?php endif;
+                } ?>
+              </select>
+            <?php endif ?>
           </div>
         </div>
         <div class="mt-3 ms-1 me-1 __computerComment">

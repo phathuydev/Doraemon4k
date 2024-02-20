@@ -16,7 +16,7 @@ $item = $getVideoDetail; {
         <video id="video_controls" width="100%" class="__rd2" controls playsinline>
           <source src="<?= $video_path ?>" type="video/mp4">
         </video>
-        <p class="text-dark mt-2 mb-3 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
+        <p class="text-dark mt-2 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
         <div class="d-flex justify-content-between align-items-center ps-2 pe-2">
           <div class="d-flex justify-content-center align-items-center">
             <a href="https://www.facebook.com/anhzachdeptrainhatthegioi/"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" width="100" alt=""></a>
