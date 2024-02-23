@@ -24,13 +24,11 @@ $form = new Form();
               <input type="password" name="password" class="form-control" id="passwordSignin" placeholder="Mật Khẩu">
               <?php $form->err('err_password_signin'); ?>
             </div>
-            <button class="bn635-hover bn25 bn5" type="button" id="signinClientId" data-href="<?= _WEB_ROOT ?>/signin" data-home="<?= _WEB_ROOT ?>/home" onclick="signinClient()">Đăng Nhập</button>
+            <button class="bn635-hover bn25 bn5 mt-3" type="button" id="signinClientId" data-href="<?= _WEB_ROOT ?>/signin" data-home="<?= _WEB_ROOT ?>/home" onclick="signinClient()">Đăng Nhập</button>
           </form>
-          <a href="<?= _WEB_ROOT ?>/forgotPassword" class="mt-2">Quên Mật Khẩu<br> </a>
+          <a href="<?= _WEB_ROOT ?>/forgotPassword" class="mt-3">Quên Mật Khẩu</a>
           <div class="text-center mt-3">
-            <a href="<?= _WEB_ROOT ?>/signup">
-              <p class="text-dark">Đăng Ký</p>
-            </a>
+            <a href="<?= _WEB_ROOT ?>/signup">Đăng Ký</a>
           </div>
         </div>
       </div>

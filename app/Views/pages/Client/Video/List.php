@@ -19,7 +19,7 @@ ob_start();
       </div>
       <?php foreach ($getAllVideo as $item) {
         extract($item); ?>
-        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+        <div class="col-lg-3 col-12 mb-4 mb-lg-0">
           <div class="custom-block custom-block-full bn5 mb-4">
             <div class="custom-block-image-wrap">
               <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $video_id ?>&cate=<?= $category_id ?>">

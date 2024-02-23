@@ -28,12 +28,10 @@ $form = new Form();
               <input type="password" name="cpassword" class="form-control" id="cpasswordSignup" placeholder="Nhập Lại Mật Khẩu">
               <?php $form->err('err_cpassword'); ?>
             </div>
-            <button class="bn635-hover bn25 bn5" id="signupClientId" data-href="<?= _WEB_ROOT ?>/signup" onclick="signupClient()" data-login="<?= _WEB_ROOT ?>/signin" type="button">Đăng Ký</button>
+            <button class="bn635-hover bn25 bn5 mt-3" id="signupClientId" data-href="<?= _WEB_ROOT ?>/signup" onclick="signupClient()" data-login="<?= _WEB_ROOT ?>/signin" type="button">Đăng Ký</button>
           </form>
-          <div class="text-center mt-2">
-            <a href="<?= _WEB_ROOT ?>/signin">
-              <p style="color: #000000;">Đăng Nhập</p>
-            </a>
+          <div class="text-center mt-3">
+            <a href="<?= _WEB_ROOT ?>/signin">Đăng Nhập</a>
           </div>
         </div>
       </div>

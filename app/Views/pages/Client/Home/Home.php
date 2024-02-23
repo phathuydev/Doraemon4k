@@ -12,7 +12,7 @@ ob_start();
       <?php foreach ($getAllVideoNewLitmit30 as $item) {
         extract($item); ?>
         <?php if (!empty($video_slug)) : ?>
-          <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+          <div class="col-lg-3 col-12 mb-4 mb-lg-0">
             <div class="custom-block custom-block-full bn5 mb-4">
               <div class="custom-block-image-wrap">
                 <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $video_id ?>&slug=<?= $video_slug ?>&epi=1">
@@ -29,7 +29,7 @@ ob_start();
             </div>
           </div>
         <?php else : ?>
-          <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+          <div class="col-lg-3 col-12 mb-4 mb-lg-0">
             <div class="custom-block custom-block-full bn5 mb-4">
               <div class="custom-block-image-wrap">
                 <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $video_id ?>&cate=<?= $category_id ?>">

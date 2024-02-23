@@ -5,7 +5,7 @@
         <div class="col-12 p-0">
           <?php foreach ($getAllComment as $item) { ?>
             <div class="d-flex flex-start mb-3">
-              <img style="margin-top: 5px;" src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="35" height="35" alt="">
+              <img style="margin-top: 5px;" src="https://vapa.vn/wp-content/uploads/2022/12/avatar-doremon-cute-001.jpg" width="40" height="40" alt="">
               <div class="flex-grow-1 flex-shrink-1">
                 <div class="ms-2">
                   <div class="d-flex justify-content-between align-items-center">
@@ -112,7 +112,7 @@
                 foreach ($getCommentReply as $data) {
                 ?>
                   <div class="d-flex flex-start mt-2">
-                    <img style="margin-top: 5px;" class="me-2" src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="35" height="35" alt="">
+                    <img style="margin-top: 5px;" class="me-2" src="https://vapa.vn/wp-content/uploads/2022/12/avatar-doremon-cute-001.jpg" width="40" height="40" alt="">
                     <div class="flex-grow-1 flex-shrink-1">
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="m-0 __divColorComment">
@@ -219,7 +219,7 @@
                       foreach ($getGrandParentComment as $value) {
                       ?>
                         <div class="d-flex flex-start mt-2">
-                          <img style="margin-top: 5px;" class="me-2" src="https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj" width="35" height="35" alt="">
+                          <img style="margin-top: 5px;" class="me-2" src="https://vapa.vn/wp-content/uploads/2022/12/avatar-doremon-cute-001.jpg" width="40" height="40" alt="">
                           <div class="flex-grow-1 flex-shrink-1">
                             <div class="d-flex justify-content-between align-items-center">
                               <div class="m-0 __divColorComment">

@@ -89,9 +89,7 @@ function signupClient() {
     if (!password) setErrorMessage(err_password, 'Vui lòng nhập mật khẩu');
     if (!cpassword) setErrorMessage(err_cpassword, 'Vui lòng nhập lại mật khẩu');
     return false;
-  }
-
-  if (!emailRegex.test(email)) {
+  } else if (!emailRegex.test(email)) {
     setErrorMessage(err_email, 'Email không đúng định dạng');
     return false;
   } else if (name.length > 30) {
@@ -148,8 +146,7 @@ function signinClient() {
     if (!email) setErrorMessage(err_email, 'Vui lòng nhập email');
     if (!password) setErrorMessage(err_password, 'Vui lòng nhập mật khẩu');
     return false;
-  }
-  if (!emailRegex.test(email)) {
+  } else if (!emailRegex.test(email)) {
     setErrorMessage(err_email, 'Email sai định dạng');
     return false;
   }
@@ -193,10 +190,7 @@ function forgotClient() {
   if (!email) {
     if (!email) setErrorMessage(err_email, 'Vui lòng nhập email');
     return false;
-  }
-
-
-  if (!emailRegex.test(email)) {
+  } else if (!emailRegex.test(email)) {
     setErrorMessage(err_email, 'Email sai định dạng');
     return false;
   }
