@@ -158,7 +158,12 @@ a.channel:hover {
 
 .video-con:hover,
 .active-con {
-  background: #00ebff;
+  background: #c8deff;
+}
+
+#longText p {
+  color: #000000;
+  margin: 0;
 }
 
 .index {

@@ -19,7 +19,7 @@ ob_start();
             <p>Xem trước</p>
             <p>
             <?php if (!empty($episodes[0]['name'] == 1)) : ?>
-              <select class="form-select mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
+              <select class="form-select form-control-sm bg-dark text-white small mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
                 <?php foreach ($episodes as $items) {
                   if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
                     <option value="<?= _WEB_ROOT ?>/DetailMovie?slug=<?= $_GET['slug'] ?>&pages=<?= $_GET['pages'] ?>&epi=<?= $items['name'] ?>" <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>>Tập <?= $items['name'] ?></option>

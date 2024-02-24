@@ -103,15 +103,15 @@ $item = $getVideoDetail; {
             <?php endif; ?>
           </div>
         </div>
-        <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-2 ms-1 me-1 mb-md-2">
+        <div class="p-3 bg-primary bg-opacity-25 rounded-2 mt-2 ms-1 me-1 mb-md-2">
           <div class="d-flex align-items-center">
-            <span class="text-white me-2" style="font-size: 14px;"><?= !empty($countViewVideo) ? $asp->formatView($countViewVideo) : 0 ?> lượt xem</span>
-            <span class="text-white" style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
+            <span class="me-2" style="font-size: 14px;"><?= !empty($countViewVideo) ? $asp->formatView($countViewVideo) : 0 ?> lượt xem</span>
+            <span style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
           </div>
           <div class="mt-2" id="longText">
-            <span class="text-white" style="font-size: 14px;"><?= $video_describe ?></span>
+            <?= $video_describe ?>
           </div>
-          <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
+          <button id="toggleButton" class="border-0 text-primary bg-transparent mt-1 p-0 small">Xem thêm...</button>
         </div>
         <div class="ms-1 me-1 __computerComment">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>

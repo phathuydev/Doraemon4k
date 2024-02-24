@@ -103,21 +103,21 @@ $item = $getVideoDetail; {
             <?php endif; ?>
           </div>
         </div>
-        <div class="p-3 bg-black bg-opacity-75 rounded-2 mt-2 ms-1 me-1">
+        <div class="p-3 bg-primary bg-opacity-25 rounded-2 mt-2 ms-1 me-1">
           <div class="d-flex align-items-center">
-            <span class="text-white me-2" style="font-size: 14px;"><?= $data['view'] ?> lượt xem</span>
-            <span class="text-white" style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
+            <span class="me-2" style="font-size: 14px;"><?= $data['view'] ?> lượt xem</span>
+            <span style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
           </div>
           <div class="mt-2" id="longText">
-            <p class="m-0" style="font-size: 14px;"><?= $data['content'] ?></p>
+            <?= $data['content'] ?>
           </div>
-          <button id="toggleButton" class="bg-white text-dark border-0 h6 mt-2">Xem thêm</button>
+          <button id="toggleButton" class="border-0 text-primary bg-transparent mt-1 p-0 small">Xem thêm...</button>
         </div>
-        <div class="text-lg-start ms-2 me-2">
+        <div class="text-lg-start ms-1 me-1">
           <div class="mt-2">
             <?php if (!empty($episodes[0]['name'] == 1)) : ?>
-              <label for="" class="form-label ms-1" style="font-weight: 500;">Xem Tiếp</label>
-              <select class="form-select mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
+              <label for="" class="form-label" style="font-weight: 500;">Xem Tiếp</label>
+              <select class="form-select form-control-sm bg-dark text-white small mb-1 rounded-2 border-dark" onchange="loadPage(this.value)">
                 <?php foreach ($episodes as $items) {
                   if (!empty($items['name']) && $items['name'] !== 'full' && $items['name'] !== 'Full') : ?>
                     <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $items['name'] ?>" <?= (!empty($_GET['epi']) && $_GET['epi'] == $items['name']) ? 'selected' : ''; ?>>Tập <?= $items['name'] ?></option>

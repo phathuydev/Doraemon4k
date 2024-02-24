@@ -91,10 +91,6 @@
   transition: max-height 0.3s ease-out;
 }
 
-#longText p {
-  color: #ffffff;
-}
-
 .selected {
   background-color: #00eeff;
   color: #000000 !important;

@@ -29,7 +29,7 @@ $form = new Form();
               ?>
                 <tr>
                   <td><?= $offset++ ?></td>
-                  <td><img src="https://img.ophim11.cc/uploads/movies/<?= $poster_url ?>" width="120" alt=""></td>
+                  <td><img src="https://img.ophim12.cc/uploads/movies/<?= $poster_url ?>" width="120" alt=""></td>
                   <td>
                     <p class="truncate-text-1"><?= $name ?></p>
                   </td>
@@ -40,7 +40,7 @@ $form = new Form();
                     <?php if (empty($getVideoSlug)) : ?>
                       <form method="post" action="/ApiManage?pages=<?= $_GET['pages'] ?>">
                         <a href="DetailMovie?slug=<?= $slug ?>&pages=<?= $_GET['pages'] ?>&epi=1" class="btn btn-outline-warning text-white mb-1">Chi Tiết</a>
-                        <input type="hidden" name="image" value="https://img.ophim11.cc/uploads/movies/<?= $poster_url ?>">
+                        <input type="hidden" name="image" value="https://img.ophim12.cc/uploads/movies/<?= $poster_url ?>">
                         <input type="hidden" name="title" value="<?= $name ?>">
                         <input type="hidden" name="slug" value="<?= $slug ?>">
                         <button type="submit" name="addVideoApi" class="btn btn-outline-light text-white mb-1">Thêm</button>

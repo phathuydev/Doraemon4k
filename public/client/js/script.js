@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle the max-height property to show/hide text
     if (longText.style.maxHeight) {
       longText.style.maxHeight = null;
-      toggleButton.textContent = "Xem thêm";
+      toggleButton.textContent = "Xem thêm...";
     } else {
       longText.style.maxHeight = longText.scrollHeight + "px";
       toggleButton.textContent = "Thu gọn";
