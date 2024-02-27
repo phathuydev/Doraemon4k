@@ -69,7 +69,7 @@ class VideoApiController extends BaseController
     }
     $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
-    $urlDetail = 'https://ophim1.com/phim/' . $_GET['slug'] . '';
+    $urlDetail = 'http://ophim1.com/phim/' . $_GET['slug'] . '';
     $responseDetail = file_get_contents($urlDetail);
     $dataDetail = json_decode($responseDetail, true);
     $this->data['subcontent']['data'] = $dataDetail['movie'];

@@ -41,7 +41,7 @@ class ApiController extends BaseController
     $page = $_GET['pages'];
     $offset = ($page - 1) * 24;
     $totalPage = ceil(25313 / 24);
-    $url = 'https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=' . $page . '';
+    $url = 'http://ophim1.com/danh-sach/phim-moi-cap-nhat?page=' . $page . '';
     $response = file_get_contents($url);
     $data = json_decode($response, true);
     $this->data['subcontent']['data'] = $data['items'];
@@ -62,7 +62,7 @@ class ApiController extends BaseController
   {
     // Bắt đầu output buffering
     ob_start();
-    $urlDetail = 'https://ophim1.com/phim/' . $_GET['slug'] . '';
+    $urlDetail = 'http://ophim1.com/phim/' . $_GET['slug'] . '';
     $responseDetail = file_get_contents($urlDetail);
     $dataDetail = json_decode($responseDetail, true);
     $this->data['subcontent']['data'] = $dataDetail['movie'];
