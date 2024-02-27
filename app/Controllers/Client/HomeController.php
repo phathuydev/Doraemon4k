@@ -22,7 +22,7 @@ class HomeController extends BaseController
     $this->data['subcontent']['home'] = '';
     $this->data['pages'] = 'pages/Client/Home/Home';
     $this->data['subcontent']['pages_title'] = 'Trang Chủ';
-    $this->data['subcontent']['getAllVideoNewLitmit30'] = $this->province->getAllVideoNewLitmit30();
+    $this->data['subcontent']['getAllVideoNewLitmit30'] = $this->province->getAllVideoNewLitmit40();
     $this->data['subcontent']['getAllCategoryHome'] = $this->province->getAllCategoryHome();
     $this->render('ClientMasterLayout', $this->data);
 
