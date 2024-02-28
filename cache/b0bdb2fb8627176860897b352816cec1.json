@@ -1,0 +1,300 @@
+{
+  "status": true,
+  "items": [
+    {
+      "modified": {
+        "time": "2024-02-26T22:09:05.000Z"
+      },
+      "_id": "65ad3bdc31d8a2b99ebcbd95",
+      "name": "Sejak: Mê Hoặc Quân Vương",
+      "slug": "sejak-me-hoac-quan-vuong",
+      "origin_name": "Captivating the King",
+      "thumb_url": "sejak-me-hoac-quan-vuong-thumb.jpg",
+      "poster_url": "sejak-me-hoac-quan-vuong-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T22:01:11.000Z"
+      },
+      "_id": "65d58bc15540d59e3ffc44bd",
+      "name": "Mộ Sắc Tâm Tích",
+      "slug": "mo-sac-tam-tich",
+      "origin_name": "Dusk Love",
+      "thumb_url": "mo-sac-tam-tich-thumb.jpg",
+      "poster_url": "mo-sac-tam-tich-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T18:22:32.000Z"
+      },
+      "_id": "655af363aa7d07ce5c940435",
+      "name": "Cô Dâu Istanbul",
+      "slug": "co-dau-instabul",
+      "origin_name": "Istanbullu Gelin",
+      "thumb_url": "co-dau-instabul-thumb.jpg",
+      "poster_url": "co-dau-instabul-poster.jpg",
+      "year": 2017
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T18:22:16.000Z"
+      },
+      "_id": "634b3ed72805d71a492fe52a",
+      "name": "Chim Bói Cá",
+      "origin_name": "Yali Çapkini",
+      "thumb_url": "chim-boi-ca-thumb.jpg",
+      "poster_url": "chim-boi-ca-poster.jpg",
+      "slug": "chim-boi-ca",
+      "year": 2022
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T16:14:04.000Z"
+      },
+      "_id": "65c10a93ff05f1a47d08c361",
+      "name": "Thua Lỗ Thành Thủ Phủ Từ Trò Chơi",
+      "slug": "thua-lo-thanh-thu-phu-tu-tro-choi",
+      "origin_name": "亏成首富从游戏开始",
+      "thumb_url": "thua-lo-thanh-thu-phu-tu-tro-choi-thumb.jpg",
+      "poster_url": "thua-lo-thanh-thu-phu-tu-tro-choi-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T16:07:47.000Z"
+      },
+      "_id": "659ac8037074f826ccbfef7d",
+      "name": "Bị đuổi khỏi tổ đội anh hùng, tôi nhắm đến một cuộc sống nhàn nhã ở vùng biên cương Phần 2",
+      "slug": "bi-duoi-khoi-to-doi-anh-hung-toi-nham-den-mot-cuoc-song-nhan-nha-o-vung-bien-cuong-phan-2",
+      "origin_name": "真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました 第2期",
+      "thumb_url": "bi-duoi-khoi-to-doi-anh-hung-toi-nham-den-mot-cuoc-song-nhan-nha-o-vung-bien-cuong-phan-2-thumb.jpg",
+      "poster_url": "bi-duoi-khoi-to-doi-anh-hung-toi-nham-den-mot-cuoc-song-nhan-nha-o-vung-bien-cuong-phan-2-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T14:22:55.000Z"
+      },
+      "_id": "65dc3b90e5f40e2ffe658329",
+      "name": "Khách Sạn Grand Shining",
+      "slug": "khach-san-grand-shining",
+      "origin_name": "Grand Shining Hotel",
+      "thumb_url": "khach-san-grand-shining-thumb.jpg",
+      "poster_url": "khach-san-grand-shining-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T14:00:13.000Z"
+      },
+      "_id": "63f5cf07a4a27d20d1661ccc",
+      "name": "Người Anh Em",
+      "origin_name": "十兄弟",
+      "thumb_url": "nguoi-anh-em-1-thumb.jpg",
+      "poster_url": "nguoi-anh-em-1-poster.jpg",
+      "slug": "nguoi-anh-em-1",
+      "year": 2005
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T10:09:04.000Z"
+      },
+      "_id": "65db5ad9f5295c8cd1f76ffe",
+      "name": "Vũ Trụ Xa Lạ",
+      "slug": "vu-tru-xa-la",
+      "origin_name": "Constellation",
+      "thumb_url": "vu-tru-xa-la-thumb.jpg",
+      "poster_url": "vu-tru-xa-la-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T09:51:44.000Z"
+      },
+      "_id": "65dbfcbdf5295c8cd1f804d7",
+      "name": "20 Days in Mariupol",
+      "slug": "20-days-in-mariupol",
+      "origin_name": "20 Days in Mariupol",
+      "thumb_url": "20-days-in-mariupol-thumb.jpg",
+      "poster_url": "20-days-in-mariupol-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T09:50:25.000Z"
+      },
+      "_id": "65dbfc6ff5295c8cd1f80216",
+      "name": "Âm Thanh Của Trái Đất - Earthsounds",
+      "slug": "am-thanh-cua-trai-dat-earthsounds",
+      "origin_name": "Earthsounds",
+      "thumb_url": "am-thanh-cua-trai-dat-earthsounds-thumb.jpg",
+      "poster_url": "am-thanh-cua-trai-dat-earthsounds-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T09:43:27.000Z"
+      },
+      "_id": "65dbfacdf5295c8cd1f7fa8d",
+      "name": "Kỳ World Cup Của Messi: Huyền Thoại Tỏa Sáng - Messi's World Cup: The Rise of a Legend",
+      "slug": "ky-world-cup-cua-messi-huyen-thoai-toa-sang-messis-world-cup-the-rise-of-a-legend",
+      "origin_name": "Messi's World Cup: The Rise of a Legend",
+      "thumb_url": "ky-world-cup-cua-messi-huyen-thoai-toa-sang-messis-world-cup-the-rise-of-a-legend-thumb.jpg",
+      "poster_url": "ky-world-cup-cua-messi-huyen-thoai-toa-sang-messis-world-cup-the-rise-of-a-legend-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T09:40:24.000Z"
+      },
+      "_id": "65dbfa16e5f40e2ffe64f750",
+      "name": "Einstein và trái bom",
+      "slug": "einstein-va-trai-bom",
+      "origin_name": "Einstein and the Bomb",
+      "thumb_url": "einstein-va-trai-bom-thumb.jpg",
+      "poster_url": "einstein-va-trai-bom-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:14:15.000Z"
+      },
+      "_id": "6524d6601e9ad2fe0c48dbdd",
+      "name": "Shangri-La Frontier: Thợ săn game rác",
+      "slug": "shangri-la-frontier",
+      "origin_name": "Shangri-La Frontier",
+      "thumb_url": "shangri-la-frontier-thumb.jpg",
+      "poster_url": "shangri-la-frontier-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:13:57.000Z"
+      },
+      "_id": "62a1a4ae7a956fb5db030134",
+      "name": "Thần Ấn Vương Toạ",
+      "origin_name": "Throne of Seal",
+      "thumb_url": "than-an-vuong-toa-thumb.jpg",
+      "poster_url": "than-an-vuong-toa-poster.jpg",
+      "slug": "than-an-vuong-toa",
+      "year": 2022
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:09:13.000Z"
+      },
+      "_id": "6505f52425c3f47570c8fb41",
+      "name": "Đại Chúa Tể",
+      "slug": "dai-chua-te-2023",
+      "origin_name": "The Great Ruler",
+      "thumb_url": "dai-chua-te-2023-thumb.jpg",
+      "poster_url": "dai-chua-te-2023-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:08:27.000Z"
+      },
+      "_id": "65282ff525c3f47570dd21e5",
+      "name": "Nghịch Thiên Tà Thần",
+      "slug": "nghich-thien-ta-than",
+      "origin_name": "Against the Gods",
+      "thumb_url": "nghich-thien-ta-than-thumb.jpg",
+      "poster_url": "nghich-thien-ta-than-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:08:03.000Z"
+      },
+      "_id": "657b00162f36c295ed264e40",
+      "name": "Trò Chơi Sống Còn",
+      "slug": "tro-choi-song-con",
+      "origin_name": "Fatal Rule",
+      "thumb_url": "tro-choi-song-con-thumb.jpg",
+      "poster_url": "tro-choi-song-con-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T22:07:14.000Z"
+      },
+      "_id": "6274deed3a2c0c6289bdb9a0",
+      "name": "Thần Võ Thiên Tôn",
+      "origin_name": "The  Legend of  Sky Lord",
+      "thumb_url": "than-vo-thien-ton-thumb.jpg",
+      "slug": "than-vo-thien-ton",
+      "year": 2020,
+      "poster_url": "than-vo-thien-ton-poster.jpg"
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T21:56:03.000Z"
+      },
+      "_id": "6496778689254768d75ee8e3",
+      "name": "Đấu La Đại Lục 2: Tuyệt Thế Đường Môn",
+      "slug": "dau-la-dai-luc-2-tuyet-the-duong-mon",
+      "origin_name": "Soul Land 2: The Peerless Tang Clan",
+      "thumb_url": "dau-la-dai-luc-2-tuyet-the-duong-mon-thumb.jpg",
+      "poster_url": "dau-la-dai-luc-2-tuyet-the-duong-mon-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T21:43:28.000Z"
+      },
+      "_id": "65c3468d5540d59e3fe6261a",
+      "name": "Nam Lai Bắc Vãng",
+      "slug": "nam-lai-bac-vang",
+      "origin_name": "Always on the Move",
+      "thumb_url": "nam-lai-bac-vang-thumb.jpg",
+      "poster_url": "nam-lai-bac-vang-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T21:27:24.000Z"
+      },
+      "_id": "65d46b755540d59e3ffacb87",
+      "name": "Đại Lý Tự Thiếu Khanh Du",
+      "slug": "dai-ly-tu-thieu-khanh-du",
+      "origin_name": "White Cat Legend",
+      "thumb_url": "dai-ly-tu-thieu-khanh-du-thumb.jpg",
+      "poster_url": "dai-ly-tu-thieu-khanh-du-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T16:26:08.000Z"
+      },
+      "_id": "6220e66e8481266c5b7f154f",
+      "name": "Đảo Hải Tặc",
+      "origin_name": "One Piece (Luffy)",
+      "thumb_url": "one-piece-thumb.jpg",
+      "slug": "one-piece",
+      "year": 1999,
+      "poster_url": "one-piece-poster.jpg"
+    },
+    {
+      "modified": {
+        "time": "2024-02-25T16:24:54.000Z"
+      },
+      "_id": "651929a2fe8e2316c0895d16",
+      "name": "Ragna Crimson",
+      "slug": "ragna-crimson",
+      "origin_name": "ラグナクリムゾン",
+      "thumb_url": "ragna-crimson-thumb.jpg",
+      "poster_url": "ragna-crimson-poster.jpg",
+      "year": 2023
+    }
+  ],
+  "pathImage": "https://img.ophim12.cc/uploads/movies/",
+  "pagination": {
+    "totalItems": 25398,
+    "totalItemsPerPage": 24,
+    "currentPage": 2,
+    "totalPages": 1059
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "status": true,
+  "items": [
+    {
+      "modified": {
+        "time": "2024-02-27T21:27:10.000Z"
+      },
+      "_id": "65bcd6e4ff05f1a47d02367a",
+      "name": "Con Gái Ngài Đại Sứ",
+      "slug": "con-gai-ngai-dai-su",
+      "origin_name": "Sefirin Kizi",
+      "thumb_url": "con-gai-ngai-dai-su-thumb.jpg",
+      "poster_url": "con-gai-ngai-dai-su-poster.jpg",
+      "year": 2019
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:26:53.000Z"
+      },
+      "_id": "6422921654695c9785d3b336",
+      "name": "Hoa Máu",
+      "slug": "hoa-mau",
+      "origin_name": "Kan Cicekleri",
+      "thumb_url": "hoa-mau-thumb.jpg",
+      "poster_url": "hoa-mau-poster.jpg",
+      "year": 2022
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:26:37.000Z"
+      },
+      "_id": "65530d70aa7d07ce5c84d236",
+      "name": "Giấu Em",
+      "slug": "giau-em",
+      "origin_name": "Sakla Beni",
+      "thumb_url": "giau-em-thumb.jpg",
+      "poster_url": "giau-em-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:26:19.000Z"
+      },
+      "_id": "6404b7820fc1635bd467951c",
+      "name": "Cầm Tù",
+      "slug": "cam-tu",
+      "origin_name": "Esaret",
+      "thumb_url": "cam-tu-thumb.jpg",
+      "poster_url": "cam-tu-poster.jpg",
+      "year": 2022
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:26:02.000Z"
+      },
+      "_id": "65af840a31d8a2b99ec02142",
+      "name": "Yêu Không Giới Hạn",
+      "slug": "yeu-khong-gioi-han",
+      "origin_name": " Hudutsuz Sevda                                                                                                                                                                                                                                  ",
+      "thumb_url": "yeu-khong-gioi-han-thumb.jpg",
+      "poster_url": "yeu-khong-gioi-han-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:25:40.000Z"
+      },
+      "_id": "65488bb4aa7d07ce5c7262c7",
+      "name": "Phản Bội",
+      "slug": "phan-boi-tnk",
+      "origin_name": "Aldatmak",
+      "thumb_url": "phan-boi-tnk-thumb.jpg",
+      "poster_url": "phan-boi-tnk-poster.jpg",
+      "year": 2022
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T21:12:09.000Z"
+      },
+      "_id": "65ddeb80e5f40e2ffe6a37f2",
+      "name": "Tử Xuyên: Quang Minh Tam Kiệt",
+      "slug": "tu-xuyen-quang-minh-tam-kiet",
+      "origin_name": "Eternal Brotherhood",
+      "thumb_url": "tu-xuyen-quang-minh-tam-kiet-thumb.jpg",
+      "poster_url": "tu-xuyen-quang-minh-tam-kiet-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T20:57:58.000Z"
+      },
+      "_id": "657044acefed8b773985bb23",
+      "name": "Tam Thập Lục Kỵ",
+      "slug": "tam-thap-luc-ky",
+      "origin_name": "Thirty Six Cavalry ",
+      "thumb_url": "tam-thap-luc-ky-thumb.jpg",
+      "poster_url": "tam-thap-luc-ky-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T20:57:39.000Z"
+      },
+      "_id": "65da1c54e5f40e2ffe61f423",
+      "name": "Người Yêu Mùa Hè Của Tôi",
+      "slug": "nguoi-yeu-mua-he-cua-toi",
+      "origin_name": "My Summer Sweetheart",
+      "thumb_url": "nguoi-yeu-mua-he-cua-toi-thumb.jpg",
+      "poster_url": "nguoi-yeu-mua-he-cua-toi-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T20:46:13.000Z"
+      },
+      "_id": "65dcc375e5f40e2ffe669f50",
+      "name": "Đôi Mắt Si Tình",
+      "slug": "doi-mat-si-tinh",
+      "origin_name": "Eye Love You",
+      "thumb_url": "doi-mat-si-tinh-thumb.jpg",
+      "poster_url": "doi-mat-si-tinh-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T20:31:27.000Z"
+      },
+      "_id": "65d62ab25540d59e3ffd4b37",
+      "name": "Liệp Băng",
+      "slug": "liep-bang",
+      "origin_name": "The Hunter",
+      "thumb_url": "liep-bang-thumb.jpg",
+      "poster_url": "liep-bang-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T20:26:57.000Z"
+      },
+      "_id": "65cb7dc35540d59e3fef693c",
+      "name": "Pháo Hoa Nhân Gian",
+      "slug": "phao-hoa-nhan-gia",
+      "origin_name": "Islands",
+      "thumb_url": "phao-hoa-nhan-gia-thumb.jpg",
+      "poster_url": "phao-hoa-nhan-gia-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T16:24:07.000Z"
+      },
+      "_id": "65b60e7a7074f826ccf5cc6a",
+      "name": "Nốt Trầm Đời Bác Sĩ",
+      "slug": "not-tram-doi-bac-si",
+      "origin_name": "Doctor Slump",
+      "thumb_url": "not-tram-doi-bac-si-thumb.jpg",
+      "poster_url": "not-tram-doi-bac-si-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T15:55:45.000Z"
+      },
+      "_id": "65a7f84731d8a2b99eb57c2d",
+      "name": "Đòn bẩy (Phần 1)",
+      "slug": "leverage-redemption-phan-1",
+      "origin_name": "Leverage: Redemption (Season 1)",
+      "thumb_url": "leverage-redemption-phan-1-thumb.jpg",
+      "poster_url": "leverage-redemption-phan-1-poster.jpg",
+      "year": 2021
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T15:19:33.000Z"
+      },
+      "_id": "658d2bf4efed8b7739f08791",
+      "name": "Tình Ca Ảo Mộng",
+      "slug": "tinh-ca-ao-mong",
+      "origin_name": "Love Song For Illusion",
+      "thumb_url": "tinh-ca-ao-mong-thumb.jpg",
+      "poster_url": "tinh-ca-ao-mong-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T14:35:42.000Z"
+      },
+      "_id": "65d46e95ff05f1a47d1fe63f",
+      "name": "9 Lần Gặp Em",
+      "slug": "9-lan-gap-em",
+      "origin_name": "Nine Times Time Travel",
+      "thumb_url": "9-lan-gap-em-thumb.jpg",
+      "poster_url": "9-lan-gap-em-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T14:35:17.000Z"
+      },
+      "_id": "65dca927f5295c8cd1f94279",
+      "name": "Anh Từng Đến Tương Lai Của Em",
+      "slug": "anh-tung-den-tuong-lai-cua-em",
+      "origin_name": "I've Been to Your Future",
+      "thumb_url": "anh-tung-den-tuong-lai-cua-em-thumb.jpg",
+      "poster_url": "anh-tung-den-tuong-lai-cua-em-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T14:34:51.000Z"
+      },
+      "_id": "65d82a2fe5f40e2ffe5eb047",
+      "name": "Tình Yêu Trong Bàn Tay",
+      "slug": "tinh-yeu-trong-ban-tay",
+      "origin_name": "Palms on Love",
+      "thumb_url": "tinh-yeu-trong-ban-tay-thumb.jpg",
+      "poster_url": "tinh-yeu-trong-ban-tay-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T04:16:22.000Z"
+      },
+      "_id": "65d0c700ff05f1a47d1ab142",
+      "name": "Halo (Phần 2)",
+      "slug": "halo-phan-2",
+      "origin_name": "Halo Season 2",
+      "thumb_url": "halo-phan-2-thumb.jpg",
+      "poster_url": "halo-phan-2-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-27T00:56:22.000Z"
+      },
+      "_id": "65dcc798e5f40e2ffe66b250",
+      "name": "Hôn Lễ Bất Khả Thi",
+      "slug": "hon-le-bat-kha-thi",
+      "origin_name": "Wedding Impossible",
+      "thumb_url": "hon-le-bat-kha-thi-thumb.jpg",
+      "poster_url": "hon-le-bat-kha-thi-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T23:13:00.000Z"
+      },
+      "_id": "65d45c745540d59e3ffa8f82",
+      "name": "Nụ Hôn Ở Seongsu",
+      "slug": "nu-hon-o-seongsu",
+      "origin_name": "Branding in Seongsu",
+      "thumb_url": "nu-hon-o-seongsu-thumb.jpg",
+      "poster_url": "nu-hon-o-seongsu-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T22:42:26.000Z"
+      },
+      "_id": "65c86e68ff05f1a47d107556",
+      "name": "Tuyệt Sắc Tiểu Thần Y",
+      "slug": "tuyet-sac-tieu-than-y",
+      "origin_name": "Ms. Fantastic Miracle Doctor",
+      "thumb_url": "tuyet-sac-tieu-than-y-thumb.jpg",
+      "poster_url": "tuyet-sac-tieu-than-y-poster.jpg",
+      "year": 2023
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T22:31:03.000Z"
+      },
+      "_id": "65dcaaf4e5f40e2ffe665181",
+      "name": "Trao Nàng Bàn Tay",
+      "slug": "trao-nang-ban-tay",
+      "origin_name": "A Tale of Love and Loyalty",
+      "thumb_url": "trao-nang-ban-tay-thumb.jpg",
+      "poster_url": "trao-nang-ban-tay-poster.jpg",
+      "year": 2024
+    },
+    {
+      "modified": {
+        "time": "2024-02-26T22:24:18.000Z"
+      },
+      "_id": "65ba528cff05f1a47dff47c4",
+      "name": "A Mạch Tòng Quân",
+      "slug": "a-mach-tong-quan",
+      "origin_name": "Fighting for Love",
+      "thumb_url": "a-mach-tong-quan-thumb.jpg",
+      "poster_url": "a-mach-tong-quan-poster.jpg",
+      "year": 2024
+    }
+  ],
+  "pathImage": "https://img.ophim12.cc/uploads/movies/",
+  "pagination": {
+    "totalItems": 25398,
+    "totalItemsPerPage": 24,
+    "currentPage": 1,
+    "totalPages": 1059
+  }
+}

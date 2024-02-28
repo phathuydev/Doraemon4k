@@ -19,8 +19,6 @@ class AuthController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['email']) && isset($_POST['password'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -45,18 +43,9 @@ class AuthController extends BaseController
     $this->data['pages'] = 'pages/Client/Auth/signin';
     $this->data['subcontent']['pages_title'] = 'Đăng Nhập';
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function signup()
   {
-    // Bắt đầu output buffering
-    ob_start();
-    
     if (isset($_POST['nameSignup']) && isset($_POST['emailSignup']) && isset($_POST['passwordSignup'])) {
       $name = $_POST['nameSignup'];
       $email = $_POST['emailSignup'];
@@ -105,18 +94,9 @@ class AuthController extends BaseController
     $this->data['pages'] = 'pages/Client/Auth/signup';
     $this->data['subcontent']['pages_title'] = 'Trang Chủ';
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function forgot()
   {
-    // Bắt đầu output buffering
-    ob_start();
-
     if (isset($_POST['emailForgot'])) {
       $checkEmailForgot = $this->province->getUserSignin($_POST['emailForgot']);
       if ($checkEmailForgot) {
@@ -155,17 +135,9 @@ class AuthController extends BaseController
     $this->data['pages'] = 'pages/Client/Auth/forgot';
     $this->data['subcontent']['pages_title'] = 'Quên Mật Khẩu';
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function reset()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (empty($_SESSION['user_id'])) {
       header('Location: ' . _WEB_ROOT . '/home');
     } elseif (isset($_POST['password_new'])) {
@@ -180,12 +152,6 @@ class AuthController extends BaseController
     $this->data['subcontent']['pages_title'] = 'Đổi mật khẩu';
     $this->data['pages'] = 'pages/Client/Auth/reset';
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function signout()
   {

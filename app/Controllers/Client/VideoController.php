@@ -16,8 +16,6 @@ class VideoController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     $countVideo = $this->province->countVideo(0);
     $perPage = 24;
     $page = $_GET['pages'];
@@ -31,17 +29,10 @@ class VideoController extends BaseController
     $this->data['subcontent']['video'] = '';
     $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideoList($_GET['sort'], $perPage, $offset, 0);
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function detail()
   {
-    // Bắt đầu output buffering
-    ob_start();
+    $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     if (empty($_SESSION['last_view_time'])) {
       $_SESSION['last_view_time'] = time();
     }
@@ -56,7 +47,7 @@ class VideoController extends BaseController
         unset($_SESSION['last_view_time']);
       }
     }
-    if (isset($_POST['like'])) {
+    if (isset($_POST['like']) && $countLikeVideoWhereUserAndVideo['count'] == 0) {
       $getUserLike = $this->province->getOneLike($_SESSION['user_id_client'], $_GET['vdId']);
       if ($getUserLike) {
         $this->province->deletedWhereVideoAndUser($_GET['vdId'], $_SESSION['user_id_client']);
@@ -95,7 +86,6 @@ class VideoController extends BaseController
     } else if (isset($_POST['delete'])) {
       $this->province->delete('comments', 'comment_id', '' . $_POST['comment_id'] . ' AND user_id = ' . $_SESSION['user_id_client'] . ' AND video_id = ' . $_GET['vdId'] . '');
     }
-    $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/Video/Detail';
     $this->data['subcontent']['pages_title'] = 'Xem Video';
     $this->data['subcontent']['video_detail_css'] = '<link rel="stylesheet" href="' . _WEB_ROOT . '/public/client/css/videoDetail.css">';
@@ -110,17 +100,9 @@ class VideoController extends BaseController
     $this->data['subcontent']['countLikeVideoWhereUserAndVideo'] = $countLikeVideoWhereUserAndVideo['count'];
     $this->data['subcontent']['video'] = '';
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function search()
   {
-    // Bắt đầu output buffering
-    ob_start();
     $countVideoWhereSearch = $this->province->countVideoWhereSearch($_GET['kw']);
     $page = $_GET['pages'];
     $sort = $_GET['sort'];
@@ -137,11 +119,5 @@ class VideoController extends BaseController
     $this->data['subcontent']['getVideoSearch'] = $getVideoSearch;
     $this->data['subcontent']['countVideoWhereSearch'] = $countVideoWhereSearch;
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 }

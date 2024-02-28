@@ -21,8 +21,6 @@ class CategoryController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['deleteCategory'])) {
       $countVideoCategory = $this->province->countVideoCategory($_POST['category_id']);
       if ($countVideoCategory > 0) {
@@ -49,17 +47,9 @@ class CategoryController extends BaseController
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset + 1;
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function create()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['name'])) {
       $getCategoryWhereName = $this->province->getCategoryWhereName($_POST['name']);
       if ($getCategoryWhereName) {
@@ -82,17 +72,9 @@ class CategoryController extends BaseController
     $this->data['pages'] = 'pages/Admin/Category/Create';
     $this->data['subcontent']['pages_title'] = 'Thêm Danh Sách Phát';
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function update()
   {
-    // Bắt đầu output buffering
-    ob_start();
     $getCategoryEdit = $this->province->getCategoryEdit($_GET['cateId']);
     if (isset($_POST['name'])) {
       if ($_POST['name'] == $getCategoryEdit['category_name']) {
@@ -131,11 +113,5 @@ class CategoryController extends BaseController
     $this->data['subcontent']['pages_title'] = 'Cập Nhật Danh Sách Phát';
     $this->data['subcontent']['getCategoryEdit'] = $getCategoryEdit;
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 }

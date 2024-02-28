@@ -4,21 +4,22 @@ namespace App\Controllers\Client;
 
 use App\Controllers\BaseController;
 use App\Models\Client\VideoModel;
+use App\Models\Admin\VideoModel as VideoAdminModel;
 
 class VideoApiController extends BaseController
 {
   public $province;
+  public $VideoAdminModel;
   public $data = [];
   public function __construct()
   {
     $this->data['subcontent']['videoApi'] = '';
     $this->model('Client', 'VideoModel');
     $this->province = new VideoModel();
+    $this->VideoAdminModel = new VideoAdminModel();
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     $countVideo = $this->province->countVideo(1);
     $perPage = 24;
     $page = $_GET['pages'];
@@ -31,17 +32,9 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['offset'] = $offset;
     $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideoList($_GET['sort'], $perPage, $offset, 1);
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function detail()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['comment'])) {
       $data = [
         'user_id' => $_SESSION['user_id_client'],
@@ -69,9 +62,8 @@ class VideoApiController extends BaseController
     }
     $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
-    $urlDetail = 'http://ophim1.com/phim/' . $_GET['slug'] . '';
-    $responseDetail = file_get_contents($urlDetail);
-    $dataDetail = json_decode($responseDetail, true);
+
+    $dataDetail = $this->VideoAdminModel->getSlugMovies($_GET['slug']);
     $this->data['subcontent']['data'] = $dataDetail['movie'];
     $this->data['subcontent']['episodes'] = $dataDetail['episodes'][0]['server_data'];
     $this->data['subcontent']['pages_title'] = 'Xem Video';
@@ -85,11 +77,5 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['current_url'] = "" . _WEB_ROOT . "$_SERVER[REQUEST_URI]";
     $this->data['subcontent']['countLikeVideoWhereUserAndVideo'] = $countLikeVideoWhereUserAndVideo['count'];
     $this->render('ClientMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 }

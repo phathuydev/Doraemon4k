@@ -21,8 +21,6 @@ class VideoController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['deleteVideo'])) {
       $this->province->deleteVideo($_POST['video_id']);
       echo '<script>
@@ -42,17 +40,9 @@ class VideoController extends BaseController
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset + 1;
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function create()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_FILES['image']) && isset($_FILES['video']) && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['describe'])) {
       $image = $_FILES['image']['name'];
       $video = $_FILES['video']['name'];
@@ -76,17 +66,9 @@ class VideoController extends BaseController
     $this->data['pages'] = 'pages/Admin/Video/Create';
     $this->data['subcontent']['pages_title'] = 'Thêm Phim Mới';
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function update()
   {
-    // Bắt đầu output buffering
-    ob_start();
     $getVideoEdit = $this->province->getVideoEdit($_GET['vId']);
     if (isset($_POST['title']) && isset($_POST['category']) && isset($_POST['describe'])) {
       $image = $_FILES['image']['name'];
@@ -112,17 +94,9 @@ class VideoController extends BaseController
     $this->data['pages'] = 'pages/Admin/Video/Update';
     $this->data['subcontent']['pages_title'] = 'Cập Nhật Phim';
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
   public function search()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['deleteVideo'])) {
       $this->province->deleteVideo($_POST['video_id']);
       echo '<script>
@@ -142,11 +116,5 @@ class VideoController extends BaseController
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset + 1;
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 }

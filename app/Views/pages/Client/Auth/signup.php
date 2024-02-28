@@ -1,6 +1,4 @@
 <?php
-ob_start();
-
 use Core\Form;
 
 $form = new Form();
@@ -38,6 +36,3 @@ $form = new Form();
     </div>
   </div>
 </section>
-<?php
-ob_end_flush();
-?>

@@ -47,8 +47,9 @@ class BaseModel implements ModelInterface
     }
     public function delete($table, $cond, $condValue)
     {
-        $query = "DELETE FROM $table WHERE $cond = $condValue";
+        $query = "DELETE FROM $table WHERE $cond = :condValue";
         $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':condValue', $condValue);
         return $stmt->execute();
     }
     public function getAll($table)

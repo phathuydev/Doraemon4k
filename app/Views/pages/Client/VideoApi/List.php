@@ -1,6 +1,3 @@
-<?php
-ob_start();
-?>
 <section class="trending-podcast-section mb-5" style="margin-bottom: 180px;">
   <div class="container">
     <div class="row">
@@ -54,6 +51,3 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
-ob_end_flush();
-?>

@@ -1,6 +1,4 @@
 <?php
-ob_start();
-
 use Core\Form;
 use App\Core\AppServiceProvider;
 
@@ -195,6 +193,4 @@ $item = $getVideoDetail; {
       </div>
     </div>
   </section>
-<?php }
-ob_end_flush();
-?>
+<?php } ?>

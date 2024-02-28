@@ -21,9 +21,6 @@ class UserController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
-
     $countAllUserAdminPage = $this->province->countAllUserAdminPage();
     $page = $_GET['pages'];
     $perPage = 24;
@@ -36,15 +33,7 @@ class UserController extends BaseController
     $this->data['subcontent']['perPage'] = $perPage;
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset + 1;
-
-    // Gọi hàm render nhưng không gửi dữ liệu ra ngay lập tức
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 
   public function search()

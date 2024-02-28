@@ -18,7 +18,7 @@ class VideoModel extends BaseModel
   }
   public function countCommentVideo($video_id)
   {
-    $data = $this->getOne('comments', 'video_id', $video_id, 'COUNT(video_id) as count');
+    $data = $this->getOne('comments', 'parent_id = 0 AND grandParent_id = 0 AND video_id', $video_id, 'COUNT(video_id) as count');
     return $data;
   }
   public function getAllComment($video_id, $order_by = 'DESC')

@@ -1,6 +1,3 @@
-<?php
-ob_start();
-?>
 <div class="container-fluid pt-4 px-4">
   <div class="row g-4">
     <div class="col-sm-12 col-xl-12">
@@ -42,10 +39,10 @@ ob_start();
                     <?= $content ?>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteComment-<?= $video_id ?>">
+                    <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteComment-<?= $comment_id ?>">
                       Xóa
                     </button>
-                    <div class="modal fade" id="deleteComment-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="deleteComment-<?= $comment_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header border-bottom-0">
@@ -87,6 +84,3 @@ ob_start();
     </div>
   </div>
 </div>
-<?php
-ob_end_flush();
-?>

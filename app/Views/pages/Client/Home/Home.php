@@ -1,6 +1,3 @@
-<?php
-ob_start();
-?>
 <section class="latest-podcast-section section-padding" style="margin-bottom: 100px;" id="section_2">
   <div class="container">
     <div class="row">
@@ -9,7 +6,7 @@ ob_start();
           <h4 class="section-title">Phim Mới</h4>
         </div>
       </div>
-      <?php foreach ($getAllVideoNewLitmit30 as $item) {
+      <?php foreach ($getAllVideoNewLitmit40 as $item) {
         extract($item); ?>
         <?php if (!empty($video_slug)) : ?>
           <div class="col-lg-3 col-12 mb-4 mb-lg-0">
@@ -50,6 +47,3 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
-ob_end_flush();
-?>

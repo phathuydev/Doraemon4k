@@ -17,8 +17,6 @@ class AuthController extends BaseController
   }
   public function index()
   {
-    // Bắt đầu output buffering
-    ob_start();
     if (isset($_POST['signin'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
@@ -44,12 +42,6 @@ class AuthController extends BaseController
     $this->data['pages_title'] = 'Đăng Nhập';
     $this->data['msg'] = (!empty($msg) ? $msg : '');
     $this->render('pages/Admin/Signin', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();  
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 
   public function signout()

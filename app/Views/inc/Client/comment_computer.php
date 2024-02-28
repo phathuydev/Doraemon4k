@@ -1,4 +1,4 @@
-<div class="row m-0 mt-md-3 <?= $countCommentVideo['count'] > 0 ? 'border' : '' ?> p-3 rounded-2">
+<div class="row m-0 mt-4 rounded-2">
   <div class="col-md-12">
     <div class="card-body">
       <div class="row">

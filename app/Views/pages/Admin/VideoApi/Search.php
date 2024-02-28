@@ -1,6 +1,4 @@
 <?php
-ob_start();
-
 use App\Core\AppServiceProvider;
 
 $asp = new AppServiceProvider();
@@ -90,6 +88,3 @@ $asp = new AppServiceProvider();
     </div>
   </div>
 </div>
-<?php
-ob_end_flush();
-?>
