@@ -27,12 +27,12 @@ class CommentController extends BaseController
         alert("Đã xóa!");
       </script>';
     }
-    $countAllUserAdminPage = $this->province->countAllComment();
+    $countAllUserAdminPage = $this->province->count('comments', 'comment_id', 'count');
     $page = $_GET['pages'];
     $perPage = 24;
     $offset = ($page - 1) * $perPage;
     $totalPage = ceil($countAllUserAdminPage / $perPage);
-    $this->data['subcontent']['getAllComment'] = $this->province->getAllComment($perPage, $offset);
+    $this->data['subcontent']['getAllComment'] = $this->province->getAll('comments INNER JOIN users ON comments.user_id = users.user_id LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
     $this->data['pages'] = 'pages/Admin/Comment/Read';
     $this->data['subcontent']['pages_title'] = 'Quản Lý Bình Luận';
     $this->data['subcontent']['totalPage'] = $totalPage;

@@ -4,11 +4,12 @@ namespace App\Models\Admin;
 
 use App\Models\BaseModel;
 
+set_time_limit(100);
 class VideoModel extends BaseModel
 {
   public function getAllVideo($perPage, $offset, $video_form)
   {
-    $data = $this->getJoinLimit('videos', 'categories', 'videos.category_id = categories.category_id WHERE video_form = ' . $video_form . '', '' . $perPage . ' OFFSET ' . $offset . '', '*, videos.created_at as created_at_video');
+    $data = $this->getAll('videos INNER JOIN categories ON videos.category_id = categories.category_id WHERE video_form = ' . $video_form . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '', '*, videos.created_at as created_at_video');
     return $data;
   }
   public function getApiCache($url)
@@ -77,12 +78,12 @@ class VideoModel extends BaseModel
   }
   public function getVideoEdit($video_id)
   {
-    $data = $this->getOne('videos', 'video_id', $video_id, '*');
+    $data = $this->getOne('videos', 'video_id', '=', $video_id, '*');
     return $data;
   }
   public function getVideoSlug($video_slug)
   {
-    $data = $this->getOne('videos', 'video_slug', $video_slug, '*');
+    $data = $this->getOne('videos', 'video_slug', '=', $video_slug, '*');
     return $data;
   }
 }

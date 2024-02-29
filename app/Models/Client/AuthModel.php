@@ -8,7 +8,7 @@ class AuthModel extends BaseModel
 {
   public function getUserSignin($email)
   {
-    $data = $this->getOne('users', 'user_email', $email);
+    $data = $this->getOne('users', 'user_email', '=', $email);
     return $data;
   }
   public function insertUser($table, $data)

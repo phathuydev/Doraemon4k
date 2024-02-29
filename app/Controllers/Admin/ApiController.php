@@ -12,7 +12,6 @@ class ApiController extends BaseController
   public $data = [];
   public function __construct()
   {
-    set_time_limit(3600);
     if (empty($_SESSION['user_admin'])) {
       header('Location: ' . _WEB_ROOT . '/signinAdmin');
     }
@@ -41,6 +40,7 @@ class ApiController extends BaseController
     $offset = ($page - 1) * 24;
     $data = $this->province->getApiMovies($page);
     $this->data['subcontent']['data'] = $data['items'];
+    $this->data['subcontent']['linkImage'] = $data['pathImage'];
     $this->data['pages'] = 'pages/Admin/Api/Read';
     $this->data['subcontent']['pages_title'] = 'Kho Phim';
     $this->data['subcontent']['page'] = $page;

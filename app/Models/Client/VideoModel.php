@@ -4,8 +4,31 @@ namespace App\Models\Client;
 
 use App\Models\BaseModel;
 
+set_time_limit(100);
 class VideoModel extends BaseModel
 {
+  public function getApiCache($url)
+  {
+    $cacheFile = 'cache/' . md5($url) . '.json';
+    $cacheTime = 259200;
+    if (file_exists($cacheFile) && time() - fileatime($cacheFile) < $cacheTime) {
+      $data = file_get_contents($cacheFile);
+      return json_decode($data, true);
+    }
+    $apiResponse = file_get_contents($url);
+    file_put_contents($cacheFile, $apiResponse);
+    return json_decode($apiResponse, true);
+  }
+  public function getSlugMovies($slug)
+  {
+    $h = [
+      'slug' => "http://ophim1.com/phim/" . $slug,
+      'data' => ''
+    ];
+
+    $h['data'] = $this->getApiCache($h['slug']);
+    return $h['data'];
+  }
   public function getAllVideoList($orderBy, $perPage, $offset, $video_form)
   {
     $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
@@ -18,7 +41,7 @@ class VideoModel extends BaseModel
   }
   public function countCommentVideo($video_id)
   {
-    $data = $this->getOne('comments', 'parent_id = 0 AND grandParent_id = 0 AND video_id', $video_id, 'COUNT(video_id) as count');
+    $data = $this->getOne('comments', 'parent_id = 0 AND grandParent_id = 0 AND video_id', '=', $video_id, 'COUNT(video_id) as count');
     return $data;
   }
   public function getAllComment($video_id, $order_by = 'DESC')
@@ -43,7 +66,7 @@ class VideoModel extends BaseModel
   }
   public function getVideoDetail($video_id)
   {
-    $data = $this->getOne('videos INNER JOIN categories ON videos.category_id = categories.category_id', 'videos.video_id', $video_id, '*, videos.created_at as created_at_video');
+    $data = $this->getOne('videos INNER JOIN categories ON videos.category_id = categories.category_id', 'videos.video_id', '=', $video_id, '*, videos.created_at as created_at_video');
     return $data;
   }
   public function getVideoCategoryDetail($category_id, $video_form)
@@ -78,17 +101,17 @@ class VideoModel extends BaseModel
   }
   public function countLikeVideoWhereUserAndVideo($user_id, $video_id)
   {
-    $data = $this->getOneViewer('likes WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', 'COUNT(like_id) as count');
+    $data = $this->getAll('likes WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', 'COUNT(like_id) as count');
     return $data;
   }
   public function getUserWatched($user_id, $video_id)
   {
-    $data = $this->getOneViewer('views WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', '*');
+    $data = $this->getAll('views WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', '*');
     return $data;
   }
   public function getOneLike($user_id, $video_id)
   {
-    $data = $this->getOneViewer('likes WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', '*');
+    $data = $this->getAll('likes WHERE user_id = ' . $user_id . ' AND video_id = ' . $video_id . '', '*');
     return $data;
   }
   public function insertLike($data)
@@ -105,7 +128,7 @@ class VideoModel extends BaseModel
   }
   public function getUserSignin($email)
   {
-    $data = $this->getOne('users', 'user_email', $email);
+    $data = $this->getOne('users', 'user_email', '=', $email);
     return $data;
   }
 }

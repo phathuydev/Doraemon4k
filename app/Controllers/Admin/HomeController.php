@@ -23,9 +23,9 @@ class HomeController extends BaseController
     {
         $this->data['pages'] = 'pages/Admin/Home';
         $this->data['subcontent']['pages_title'] = 'Trang Dashboard';
-        $this->data['subcontent']['countUserDashboard'] = $this->province->countUserDashboard();
-        $this->data['subcontent']['countLikeDashboard'] = $this->province->countLikeDashboard();
-        $this->data['subcontent']['countViewDashboard'] = $this->province->countViewDashboard();
+        $this->data['subcontent']['countUserDashboard'] = $this->province->count('users', 'user_id', 'count', 'user_role = :1', ['1' => 1]);
+        $this->data['subcontent']['countLikeDashboard'] = $this->province->count('likes', 'like_id');
+        $this->data['subcontent']['countViewDashboard'] = $this->province->count('views', 'view_id');
         $this->render('AdminMasterLayout', $this->data);
     }
     

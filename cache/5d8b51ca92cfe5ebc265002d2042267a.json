@@ -1,0 +1,162 @@
+{
+  "status": true,
+  "msg": "",
+  "movie": {
+    "created": {
+      "time": "2024-02-21T23:54:10.000Z"
+    },
+    "modified": {
+      "time": "2024-02-27T20:31:27.000Z"
+    },
+    "_id": "65d62ab25540d59e3ffd4b37",
+    "name": "Liệp Băng",
+    "slug": "liep-bang",
+    "origin_name": "The Hunter",
+    "content": "<p>Ở thành phố Tam Bình, đội chống ma túy thu giữ được một lô ma túy đá mới, quy mô và độ tinh khiết cực hiếm, công an Tam Bình lập tức điều tra. Với sự nhạy bén và khả năng quan sát, nữ cảnh sát Triệu Hữu Nam đã nhắm tới Hoàng Tông Vĩ, một người bán hóa chất. Bất kể hắn có xảo quyệt đến đâu, cô cũng có thể tìm ra manh mối và sự thật. Đội công an do Triệu Hữu Nam đứng đầu và băng nhóm sản xuất, buôn bán ma túy do Hoàng Tông Vĩ đứng đầu là một cuộc đối đầu “mèo vờn chuột” đầy kịch tính...</p><p>&nbsp;</p>",
+    "type": "series",
+    "status": "ongoing",
+    "thumb_url": "https://img.ophim12.cc/uploads/movies/liep-bang-thumb.jpg",
+    "poster_url": "https://img.ophim12.cc/uploads/movies/liep-bang-poster.jpg",
+    "is_copyright": false,
+    "sub_docquyen": false,
+    "chieurap": false,
+    "trailer_url": "",
+    "time": "35 phút/tập",
+    "episode_current": "Tập 11",
+    "episode_total": "18",
+    "quality": "HD",
+    "lang": "Vietsub",
+    "notify": "",
+    "showtimes": "",
+    "year": 2024,
+    "view": 229,
+    "actor": [
+      "Zhang Songwen",
+      "Annabel Yao",
+      "Han Geng",
+      "Bao Wenjing",
+      "Su Xin",
+      "Peng Yu Si",
+      "Hongjia Zhu",
+      "Zhou Yunpeng",
+      "Chunyang Zhao"
+    ],
+    "director": [
+      "Gao Qunshu",
+      "Peng Wan"
+    ],
+    "category": [
+      {
+        "id": "620a21b2e0fc277084dfd0c5",
+        "name": "Hành Động",
+        "slug": "hanh-dong"
+      },
+      {
+        "id": "620a2249e0fc277084dfd2e5",
+        "name": "Hình Sự",
+        "slug": "hinh-su"
+      },
+      {
+        "id": "620a2293e0fc277084dfd489",
+        "name": "Phiêu Lưu",
+        "slug": "phieu-luu"
+      },
+      {
+        "id": "620f84d291fa4af90ab6b3f4",
+        "name": "Bí ẩn",
+        "slug": "bi-an"
+      }
+    ],
+    "country": [
+      {
+        "id": "62093063196e9f4ab6b448b8",
+        "name": "Trung Quốc",
+        "slug": "trung-quoc"
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "server_name": "Vietsub #1",
+      "server_data": [
+        {
+          "name": "1",
+          "slug": "1",
+          "filename": "Liệp Băng - Ep1",
+          "link_embed": "https://vip.opstream17.com/share/eddb904a6db773755d2857aacadb1cb0",
+          "link_m3u8": "https://vip.opstream17.com/20240221/1037_828f40aa/index.m3u8"
+        },
+        {
+          "name": "2",
+          "slug": "2",
+          "filename": "Liệp Băng - Ep2",
+          "link_embed": "https://vip.opstream17.com/share/6d70cb65d15211726dcce4c0e971e21c",
+          "link_m3u8": "https://vip.opstream17.com/20240221/1038_8bd891da/index.m3u8"
+        },
+        {
+          "name": "3",
+          "slug": "3",
+          "filename": "Liệp Băng - Ep3",
+          "link_embed": "https://vip.opstream17.com/share/27ed0fb950b856b06e1273989422e7d3",
+          "link_m3u8": "https://vip.opstream17.com/20240221/1039_de3fad7c/index.m3u8"
+        },
+        {
+          "name": "4",
+          "slug": "4",
+          "filename": "EP4- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/46072631582fc240dd2674a7d063b040",
+          "link_m3u8": "https://vip.opstream17.com/20240223/1075_0619cf69/index.m3u8"
+        },
+        {
+          "name": "5",
+          "slug": "5",
+          "filename": "EP5- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/8a1e808b55fde9455cb3d8857ed88389",
+          "link_m3u8": "https://vip.opstream17.com/20240223/1076_084b9fba/index.m3u8"
+        },
+        {
+          "name": "6",
+          "slug": "6",
+          "filename": "EP6- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/9adeb82fffb5444e81fa0ce8ad8afe7a",
+          "link_m3u8": "https://vip.opstream17.com/20240223/1196_fa704eb6/index.m3u8"
+        },
+        {
+          "name": "7",
+          "slug": "7",
+          "filename": "EP7- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/ae5e3ce40e0404a45ecacaaf05e5f735",
+          "link_m3u8": "https://vip.opstream17.com/20240223/1197_bccb44c6/index.m3u8"
+        },
+        {
+          "name": "8",
+          "slug": "8",
+          "filename": "EP8- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/c70daf247944fe3add32218f914c75a6",
+          "link_m3u8": "https://vip.opstream17.com/20240225/1326_56e8f26d/index.m3u8"
+        },
+        {
+          "name": "9",
+          "slug": "9",
+          "filename": "EP9- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/17fafe5f6ce2f1904eb09d2e80a4cbf6",
+          "link_m3u8": "https://vip.opstream17.com/20240225/1327_63b0e907/index.m3u8"
+        },
+        {
+          "name": "10",
+          "slug": "10",
+          "filename": "EP10- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/d82118376df344b0010f53909b961db3",
+          "link_m3u8": "https://vip.opstream17.com/20240226/1381_52b1713c/index.m3u8"
+        },
+        {
+          "name": "11",
+          "slug": "11",
+          "filename": "EP11- The Hunter - Watch HD Video Online",
+          "link_embed": "https://vip.opstream17.com/share/14d9e8007c9b41f57891c48e07c23f57",
+          "link_m3u8": "https://vip.opstream17.com/20240227/1395_acdbddea/index.m3u8"
+        }
+      ]
+    }
+  ]
+}

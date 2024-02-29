@@ -4,19 +4,16 @@ namespace App\Controllers\Client;
 
 use App\Controllers\BaseController;
 use App\Models\Client\VideoModel;
-use App\Models\Admin\VideoModel as VideoAdminModel;
 
 class VideoApiController extends BaseController
 {
   public $province;
-  public $VideoAdminModel;
   public $data = [];
   public function __construct()
   {
     $this->data['subcontent']['videoApi'] = '';
     $this->model('Client', 'VideoModel');
     $this->province = new VideoModel();
-    $this->VideoAdminModel = new VideoAdminModel();
   }
   public function index()
   {
@@ -62,8 +59,7 @@ class VideoApiController extends BaseController
     }
     $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
-
-    $dataDetail = $this->VideoAdminModel->getSlugMovies($_GET['slug']);
+    $dataDetail = $this->province->getSlugMovies($_GET['slug']);
     $this->data['subcontent']['data'] = $dataDetail['movie'];
     $this->data['subcontent']['episodes'] = $dataDetail['episodes'][0]['server_data'];
     $this->data['subcontent']['pages_title'] = 'Xem Video';

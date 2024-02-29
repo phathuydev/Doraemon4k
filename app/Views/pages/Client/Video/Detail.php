@@ -1,4 +1,5 @@
 <?php
+
 use Core\Form;
 use App\Core\AppServiceProvider;
 
@@ -10,7 +11,7 @@ $item = $getVideoDetail; {
 ?>
   <section class="trending-podcast-section container-video mt-5" style="margin-bottom: 180px;">
     <div class="row m-0">
-      <div class="col-lg-8 col-sm-12 mt-2 p-0">
+      <div class="col-12 mt-2 p-0">
         <video id="video_controls" width="100%" class="__rd2" controls playsinline>
           <source src="<?= $video_path ?>" type="video/mp4">
         </video>
@@ -111,30 +112,8 @@ $item = $getVideoDetail; {
           </div>
           <button id="toggleButton" class="border-0 text-primary bg-transparent mt-1 p-0 small">Xem thêm...</button>
         </div>
-        <div class="ms-1 me-1 __computerComment">
-          <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
-          <div class="mt-2 text-end">
-            <form onsubmit="return validateForm3()" action="<?= $current_url ?>" method="post">
-              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment3" maxlength="30" placeholder="Thể hiện ý kiến của bạn, tối đa 30 ký tự"></textarea>
-              <div class="text-start">
-                <span id="commentError3" class="text-danger"></span>
-              </div>
-              <div class="d-flex justify-content-between align-items-center mt-2">
-                <div class="filter__sort p-0">
-                  <select onchange="loadPage(this.value)" class="form-control-sm bg-dark text-white small">
-                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>" <?= (empty($_GET['sort']) ? 'selected' : '') ?>>Mới Nhất</option>
-                    <option value="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $_GET['cate'] ?>&sort=asc" <?= (!empty($_GET['sort']) == 'asc' ? 'selected' : '') ?>>Cũ Nhất</option>
-                  </select>
-                </div>
-                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
-                  '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
-              </div>
-            </form>
-          </div>
-          <?php include './app/Views/inc/Client/comment_computer.php'; ?>
-        </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-sm-12 p-0 mb-2">
+      <div class="col-12 p-0 mb-2">
         <div class="row m-0">
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-1 p-0">
             <div class="bg-black bg-opacity-10 pt-2 pb-2 ms-1 me-1 rounded-2">
@@ -181,7 +160,7 @@ $item = $getVideoDetail; {
           </div>
         </div>
       </div>
-      <div class="col-12 p-0 __phoneComment border-top pt-2 p-0">
+      <div class="col-12 p-0 border-top pt-2 p-0">
         <div class="ms-1 me-1">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
@@ -202,7 +181,7 @@ $item = $getVideoDetail; {
               </div>
             </form>
           </div>
-          <?php include './app/Views/inc/Client/comment_phone.php'; ?>
+          <?php include './app/Views/inc/Client/comment.php'; ?>
         </div>
       </div>
     </div>

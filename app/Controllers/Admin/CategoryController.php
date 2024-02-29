@@ -22,24 +22,24 @@ class CategoryController extends BaseController
   public function index()
   {
     if (isset($_POST['deleteCategory'])) {
-      $countVideoCategory = $this->province->countVideoCategory($_POST['category_id']);
+      $countVideoCategory = $this->province->count('videos', 'video_id', 'count', 'category_id = :category_id', ['category_id' =>  $_POST['category_id']]);
       if ($countVideoCategory > 0) {
         echo '<script>
           alert("Danh sách phát tồn tại video, không thể xóa!");
         </script>';
       } else {
-        $this->province->deletedCategory($_POST['category_id']);
+        $this->province->delete('categories', 'category_id', $_POST['category_id']);
         echo '<script>
           alert("Đã xóa!");
         </script>';
       }
     }
-    $countAllCategory = $this->province->countAllCategory();
+    $countAllCategory = $this->province->count('categories', 'category_id', 'count');
     $page = $_GET['pages'];
     $perPage = 24;
     $offset = ($page - 1) * $perPage;
     $totalPage = ceil($countAllCategory / $perPage);
-    $this->data['subcontent']['getAllCategory'] = $this->province->getAllCategory($perPage, $offset);
+    $this->data['subcontent']['getAllCategory'] = $this->province->getAll('categories LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
     $this->data['pages'] = 'pages/Admin/Category/Read';
     $this->data['subcontent']['pages_title'] = 'Quản Lý Danh Sách Phát';
     $this->data['subcontent']['totalPage'] = $totalPage;
@@ -64,7 +64,7 @@ class CategoryController extends BaseController
           'category_image' => _WEB_ROOT . '/' . $target_file,
           'category_name' => $_POST['name']
         ];
-        $this->province->insertCategory('categories', $data);
+        $this->province->insert('categories', $data);
         echo 'Thêm thành công!';
         return;
       }
@@ -75,7 +75,7 @@ class CategoryController extends BaseController
   }
   public function update()
   {
-    $getCategoryEdit = $this->province->getCategoryEdit($_GET['cateId']);
+    $getCategoryEdit = $this->province->getOne('categories', 'category_id', '=', $_GET['cateId'], '*');
     if (isset($_POST['name'])) {
       if ($_POST['name'] == $getCategoryEdit['category_name']) {
         $image = $_FILES['image']['name'];
@@ -86,7 +86,7 @@ class CategoryController extends BaseController
           'category_image' => $image ? _WEB_ROOT . '/' . $target_file : $getCategoryEdit['category_image'],
           'category_name' => $_POST['name']
         ];
-        $this->province->updateCategory('categories', $data, $_GET['cateId']);
+        $this->province->update('categories', $data, 'category_id', $_GET['cateId']);
         echo 'Đã lưu thông tin chỉnh sửa!!';
         return;
       } else {
@@ -103,7 +103,7 @@ class CategoryController extends BaseController
             'category_image' => $image ? _WEB_ROOT . '/' . $target_file : $getCategoryEdit['category_image'],
             'category_name' => $_POST['name']
           ];
-          $this->province->updateCategory('categories', $data, $_GET['cateId']);
+          $this->province->update('categories', $data, 'category_id', $_GET['cateId']);
           echo 'Đã lưu thông tin chỉnh sửa!!';
           return;
         }

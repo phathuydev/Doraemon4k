@@ -20,7 +20,7 @@ class AuthController extends BaseController
     if (isset($_POST['signin'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
-      $checkEmail = $this->province->getUserLogin($email);
+      $checkEmail = $this->province->getOne('users', 'user_email', '=', $email);
       if ($checkEmail) {
         if ($checkEmail['user_role'] == 1) {
           $msg = 'Không có quyền truy cập!';

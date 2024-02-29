@@ -10,7 +10,6 @@
     <meta name="google-site-verification" content="oIgXTaFxXYG4zRxXNZ0iYl9K7kRvulaLBfTIO5Xakb8" />
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Google Web Fonts -->

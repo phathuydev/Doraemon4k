@@ -21,12 +21,12 @@ class UserController extends BaseController
   }
   public function index()
   {
-    $countAllUserAdminPage = $this->province->countAllUserAdminPage();
+    $countAllUserAdminPage = $this->province->count('users', 'user_id', 'count');
     $page = $_GET['pages'];
     $perPage = 24;
     $offset = ($page - 1) * $perPage;
     $totalPage = ceil($countAllUserAdminPage / $perPage);
-    $this->data['subcontent']['getAllUserAdminPage'] = $this->province->getAllUserAdminPage($perPage, $offset);
+    $this->data['subcontent']['getAllUserAdminPage'] = $this->province->getAll('users LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
     $this->data['pages'] = 'pages/Admin/User/Read';
     $this->data['subcontent']['pages_title'] = 'Quản Lý Người Dùng';
     $this->data['subcontent']['totalPage'] = $totalPage;
@@ -38,10 +38,7 @@ class UserController extends BaseController
 
   public function search()
   {
-    // Bắt đầu output buffering
-    ob_start();
-
-    $countAllUserAdminPage = $this->province->countAllUserAdminPageWhere($_GET['kw']);
+    $countAllUserAdminPage = $this->province->count('users', 'user_id', 'count', 'user_name LIKE :user_name', ['user_name' => '%' . $_GET['kw'] . '%']);
     $page = $_GET['pages'];
     $perPage = 24;
     $offset = ($page - 1) * $perPage;
@@ -53,14 +50,6 @@ class UserController extends BaseController
     $this->data['subcontent']['perPage'] = $perPage;
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset + 1;
-
-    // Gọi hàm render nhưng không gửi dữ liệu ra ngay lập tức
     $this->render('AdminMasterLayout', $this->data);
-
-    // Lấy dữ liệu đã được render và gửi đến output buffer
-    $content = ob_get_clean();
-
-    // Hiển thị dữ liệu đã được lưu trữ trong output buffer
-    echo $content;
   }
 }

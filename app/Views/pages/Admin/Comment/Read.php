@@ -22,7 +22,7 @@
                   <td><?= $offset++ ?></td>
                   <td><?= $user_name ?></td>
                   <td>
-                    <?php $getAllVideo = $this->province->getAllVideo($video_id); ?>
+                    <?php $getAllVideo = $this->province->getAll('videos WHERE video_id = ' . $video_id . ''); ?>
                     <?php foreach ($getAllVideo as $data) {
                       if ($data['video_form'] == 0) : ?>
                         <div class="truncate-text-1">
