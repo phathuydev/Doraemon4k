@@ -24,7 +24,7 @@ class Field
       '
       <div class="mb-3">
       <label class="form-label">%s</label>
-      <input type="%s" name="%s" id="%s" placeholder="%s" maxlength="50" class="form-control bg-dark text-white small" accept="%s">
+      <input type="%s" name="%s" id="%s" placeholder="%s" maxlength="100" class="form-control bg-dark text-white small" accept="%s">
       </div>
     ',
       $this->getLabel($this->attribute),

@@ -9,7 +9,7 @@ $asp = new AppServiceProvider();
 $item = $getVideoDetail; {
   extract($item);
 ?>
-  <section class="trending-podcast-section container-video mt-5" style="margin-bottom: 180px;">
+  <section class="trending-podcast-section container-video mt-lg-5" style="margin-bottom: 180px;">
     <div class="row m-0">
       <div class="col-12 mt-1 p-0">
         <?php $value = $episodes; { ?>
