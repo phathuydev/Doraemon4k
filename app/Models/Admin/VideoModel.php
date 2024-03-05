@@ -44,6 +44,13 @@ class VideoModel extends BaseModel
     $h['data'] = $this->getApiCache($h['slug']);
     return $h['data'];
   }
+  public function deleteVideos($video_form, $video_id, $is_deleted)
+  {
+    $data = [
+      'is_deleted' => $is_deleted,
+    ];
+    $this->update('videos', $data, 'video_form = ' . $video_form . ' AND video_id', $video_id);
+  }
   public function getAllVideoWhere($perPage, $offset, $kw, $video_form)
   {
     $data = $this->getJoinLimitWhereLike('videos', 'categories', 'videos.category_id = categories.category_id', 'videos.video_form = ' . $video_form . ' AND videos.video_title', $kw, '' . $perPage . ' OFFSET ' . $offset . '', '*, videos.created_at as created_at_video');

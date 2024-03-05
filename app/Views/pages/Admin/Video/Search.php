@@ -1,4 +1,5 @@
 <?php
+
 use App\Core\AppServiceProvider;
 
 $asp = new AppServiceProvider();
@@ -40,26 +41,49 @@ $asp = new AppServiceProvider();
                   <td><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></td>
                   <td>
                     <a href="<?= _WEB_ROOT ?>/videoManage/updateVideo?vId=<?= $video_id ?>" class="btn btn-outline-light text-white mb-1">Sửa</a>
-                    <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">
-                      Xóa
-                    </button>
-                    <div class="modal fade" id="deleteVideo-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header border-bottom-0">
-                            <p class="modal-title text-dark" id="exampleModalLabel">Xóa Video</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
-                            <form action="/videoManage?pages=1" method="post">
-                              <input type="hidden" name="video_id" value="<?= $video_id ?>">
-                              <button type="submit" name="deleteVideo" class="btn btn-primary">Xóa</button>
-                            </form>
+                    <?php if (!empty($is_deleted) == 0) : ?>
+                      <button type="button" class="btn btn-outline-danger mb-1" data-bs-toggle="modal" data-bs-target="#deleteVideo-<?= $video_id ?>">
+                        Xóa
+                      </button>
+                      <div class="modal fade" id="deleteVideo-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header border-bottom-0">
+                              <p class="modal-title text-dark" id="exampleModalLabel">Xóa Video</p>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary me-0" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
+                              <form action="/videoManage?pages=1" method="post">
+                                <input type="hidden" name="video_id" value="<?= $video_id ?>">
+                                <button type="submit" name="deleteVideo" class="btn btn-primary">Xóa</button>
+                              </form>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    <?php else : ?>
+                      <button type="button" class="btn btn-outline-success mb-1" data-bs-toggle="modal" data-bs-target="#restoreVideo-<?= $video_id ?>">
+                        Khôi Phục
+                      </button>
+                      <div class="modal fade" id="restoreVideo-<?= $video_id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header border-bottom-0">
+                              <p class="modal-title text-dark" id="exampleModalLabel">Khôi Phục Video</p>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary me-0" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
+                              <form action="/videoManage?pages=1" method="post">
+                                <input type="hidden" name="video_id" value="<?= $video_id ?>">
+                                <button type="submit" name="restoreVideo" class="btn btn-primary">Khôi Phục</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <?php endif ?>
                   </td>
                 </tr>
               <?php endforeach ?>

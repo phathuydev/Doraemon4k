@@ -22,9 +22,14 @@ class VideoController extends BaseController
   public function index()
   {
     if (isset($_POST['deleteVideo'])) {
-      $this->province->deleteVideo($_POST['video_id']);
+      $this->province->deleteVideos('0', $_POST['video_id'], '1');
       echo '<script>
         alert("Đã xóa!");
+      </script>';
+    } elseif (isset($_POST['restoreVideo'])) {
+      $this->province->deleteVideos('0', $_POST['video_id'], '0');
+      echo '<script>
+        alert("Đã khôi phục!");
       </script>';
     }
     $countAllVideo = $this->province->countAllVideo(0);

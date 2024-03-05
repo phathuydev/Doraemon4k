@@ -31,12 +31,12 @@ class VideoModel extends BaseModel
   }
   public function getAllVideoList($orderBy, $perPage, $offset, $video_form)
   {
-    $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
+    $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' AND is_deleted = 0 ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
     return $data;
   }
   public function getAllVideo($video_form)
   {
-    $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' ORDER BY created_at DESC');
+    $data = $this->getAll('videos WHERE video_form = ' . $video_form . ' AND is_deleted = 0 ORDER BY created_at DESC');
     return $data;
   }
   public function countCommentVideo($video_id)
@@ -76,17 +76,17 @@ class VideoModel extends BaseModel
   }
   public function getVideoSearch($keyword, $orderBy, $perPage, $offset)
   {
-    $data = $this->getAll('videos WHERE video_title LIKE "' . '%' . $keyword . '%' . '" ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
+    $data = $this->getAll('videos WHERE video_title LIKE "' . '%' . $keyword . '%' . '"  AND is_deleted = 0 ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');
     return $data;
   }
   public function countVideo($video_form)
   {
-    $data = $this->count('videos', 'video_id', 'count', 'video_form = :video_form', ['video_form' => $video_form]);
+    $data = $this->count('videos', 'video_id', 'count', 'video_form = :video_form AND is_deleted = :is_deleted', ['video_form' => $video_form, 'is_deleted' => '0']);
     return $data;
   }
   public function countVideoWhereSearch($keyword)
   {
-    $data = $this->count('videos', 'video_id', 'count', 'video_title LIKE :keyword', ['keyword' => '%' . $keyword . '%']);
+    $data = $this->count('videos', 'video_id', 'count', 'video_title LIKE :keyword AND is_deleted = :is_deleted', ['keyword' => '%' . $keyword . '%', 'is_deleted' => '0']);
     return $data;
   }
   public function countViewVideo($video_id)
