@@ -233,3 +233,58 @@ function editVideo() {
 
     return false;
 }
+
+function login() {
+    var form = $("#loginAdmin")[0];
+    var formData = new FormData(form);
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var err_email = $("#email_err");
+    var err_password = $("#password_err");
+    var url = $("#loginLink").data('href');
+    var urlResult = $("#loginLink").data('result');
+
+    function setErrorMessage(field, message) {
+        field.html(message);
+    }
+
+    err_email.html('');
+    err_password.html('');
+
+    if (!email || !password) {
+        if (!email) setErrorMessage(err_email, 'Vui lòng nhập email');
+        if (!password) setErrorMessage(err_password, 'Vui lòng nhập mật khẩu');
+        return false;
+    } else if (!emailRegex.test(email)) {
+        setErrorMessage(err_email, 'Email sai định dạng');
+        return false;
+    }
+
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: formData,
+        contentType: false,
+        processData: false, 
+        success: function (response) {
+            if (response.includes('Email hoặc mật khẩu không đúng!')) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Đăng nhập thất bại",
+                    text: "Email hoặc mật khẩu không đúng!"
+                });
+            } else if (response.includes('Không có quyền truy cập!')) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Đăng nhập thất bại",
+                    text: "Không có quyền truy cập!"
+                });
+            } else if (response.includes('Đăng nhập thành công!')) {
+                loadPage(urlResult);
+            }
+        },
+    });
+
+    return false;
+}

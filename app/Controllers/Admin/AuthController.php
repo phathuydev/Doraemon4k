@@ -17,26 +17,30 @@ class AuthController extends BaseController
   }
   public function index()
   {
-    if (isset($_POST['signin'])) {
+    if (isset($_POST['email']) && isset($_POST['password'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
       $checkEmail = $this->province->getOne('users', 'user_email', '=', $email);
       if ($checkEmail) {
         if ($checkEmail['user_role'] == 1) {
-          $msg = 'Không có quyền truy cập!';
+          echo 'Không có quyền truy cập!';
+          return;
         } else {
           if (password_verify($password, $checkEmail['user_password'])) {
             $_SESSION['user_admin'] = $checkEmail['user_id'];
             $_SESSION['user_name'] = $checkEmail['user_name'];
             $_SESSION['user_email'] = $checkEmail['user_email'];
             $_SESSION['user_role'] = $checkEmail['user_role'];
-            header('Location: ' . _WEB_ROOT . '/admin');
+            echo 'Đăng nhập thành công!';
+            return;
           } else {
-            $msg = 'Email hoặc mật khẩu không đúng!';
+            echo 'Email hoặc mật khẩu không đúng!';
+            return;
           }
         }
       } else {
-        $msg = 'Email hoặc mật khẩu không đúng!';
+        echo 'Email hoặc mật khẩu không đúng!';
+        return;
       }
     }
     $this->data['pages_title'] = 'Đăng Nhập';
