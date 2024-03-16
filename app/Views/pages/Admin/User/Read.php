@@ -1,4 +1,5 @@
 <?php
+
 use App\Core\AppServiceProvider;
 
 $asp = new AppServiceProvider();
@@ -35,19 +36,11 @@ $asp = new AppServiceProvider();
           </table>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-          <nav aria-label="Page navigation example">
-            <div class="d-flex justify-content-between align-items-center">
-              <ul class="product__pagination pagination pagination-sm">
-                <li class="page-item <?= $page < 3 ? 'd-none' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/userManage?pages=<?= 1; ?>')" tabindex="-1"><i class="fa fa-long-arrow-left"></i></a></li>
-                <?php for ($num = 1; $num <= $totalPage; $num++) { ?>
-                  <li class="page-item <?= $num == $page ? 'bg-danger' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/userManage?pages=<?= $num; ?>')"><?= $num; ?></a>
-                  </li>
-                <?php } ?>
-                <li class="page-item <?= $page > ($totalPage - 1) ? 'd-none' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/userManage?pages=<?= $page + 1; ?>')"><i class="fa fa-long-arrow-right"></i></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+          <select onchange="loadPage(this.value)" class="border-0 p-1 bg-dark text-white">
+            <?php for ($num = 1; $num <= $totalPage; $num++) { ?>
+              <option value="<?= _WEB_ROOT ?>/videoManage?pages=<?= $num; ?>" <?= ($num == $page) ? 'selected' : '' ?>>Trang <?= $num ?></option>
+            <?php } ?>
+          </select>
           <div class="float-end">
             <form method="get" action="<?= _WEB_ROOT ?>/searchUserManage">
               <input type="hidden" name="pages" value="1">

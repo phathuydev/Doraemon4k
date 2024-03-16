@@ -17,7 +17,7 @@ class VideoApiController extends BaseController
   }
   public function index()
   {
-    $countVideo = $this->province->countVideo(1);
+    $countVideo = $this->province->countVideo();
     $perPage = 24;
     $page = $_GET['pages'];
     $offset = ($page - 1) * $perPage;
@@ -27,7 +27,7 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['perPage'] = $perPage;
     $this->data['subcontent']['page'] = $page;
     $this->data['subcontent']['offset'] = $offset;
-    $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideoList($_GET['sort'], $perPage, $offset, 1);
+    $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideoList($_GET['sort'], $perPage, $offset);
     $this->render('ClientMasterLayout', $this->data);
   }
   public function detail()
@@ -50,14 +50,13 @@ class VideoApiController extends BaseController
       ];
       $this->province->insert('comments', $data);
     } else if (isset($_POST['delete'])) {
-      $this->province->delete('comments', 'comment_id', '' . $_POST['comment_id'] . ' AND user_id = ' . $_SESSION['user_id_client'] . ' AND video_id = ' . $_GET['vdId'] . '');
+      $this->province->delete('comments', 'comment_id', $_POST['comment_id']);
     } else if (isset($_POST['edit'])) {
       $data = [
         'content' => $_POST['content'],
       ];
       $this->province->update('comments', $data, 'comment_id', $_POST['comment_id']);
     }
-    $countLikeVideoWhereUserAndVideo = $this->province->countLikeVideoWhereUserAndVideo((!empty($_SESSION['user_id_client']) ? $_SESSION['user_id_client'] : 0), $_GET['vdId']);
     $this->data['pages'] = 'pages/Client/VideoApi/Detail';
     $dataDetail = $this->province->getSlugMovies($_GET['slug']);
     $this->data['subcontent']['data'] = $dataDetail['movie'];
@@ -67,11 +66,27 @@ class VideoApiController extends BaseController
     $this->data['subcontent']['getAllComment'] = $this->province->getAllComment($_GET['vdId'], (!empty($_GET['sort']) ? $_GET['sort'] : 'DESC'));
     $this->data['subcontent']['countCommentVideo'] = $this->province->countCommentVideo($_GET['vdId']);
     $this->data['subcontent']['getVideoDetail'] = $this->province->getVideoDetail($_GET['vdId']);
-    $this->data['subcontent']['countViewVideo'] = $this->province->countViewVideo($_GET['vdId']);
-    $this->data['subcontent']['countLikeVideo'] = $this->province->countLikeVideo($_GET['vdId']);
-    $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideo(1);
+    $this->data['subcontent']['getAllVideo'] = $this->province->getAllVideo();
     $this->data['subcontent']['current_url'] = "" . _WEB_ROOT . "$_SERVER[REQUEST_URI]";
-    $this->data['subcontent']['countLikeVideoWhereUserAndVideo'] = $countLikeVideoWhereUserAndVideo['count'];
+    $this->render('ClientMasterLayout', $this->data);
+  }
+  public function search()
+  {
+    $countVideoWhereSearch = $this->province->countVideoWhereSearch($_GET['kw']);
+    $page = $_GET['pages'];
+    $sort = $_GET['sort'];
+    $perPage = 24;
+    $offset = ($page - 1) * $perPage;
+    $totalPage = ceil($countVideoWhereSearch / $perPage);
+    $getVideoSearch = $this->province->getVideoSearch($_GET['kw'], $sort, $perPage, $offset);
+    $this->data['pages'] = 'pages/Client/VideoApi/Search';
+    $this->data['subcontent']['pages_title'] = 'Tìm Kiếm Video';
+    $this->data['subcontent']['totalPage'] = $totalPage;
+    $this->data['subcontent']['perPage'] = $perPage;
+    $this->data['subcontent']['page'] = $page;
+    $this->data['subcontent']['offset'] = $offset + 1;
+    $this->data['subcontent']['getVideoSearch'] = $getVideoSearch;
+    $this->data['subcontent']['countVideoWhereSearch'] = $countVideoWhereSearch;
     $this->render('ClientMasterLayout', $this->data);
   }
 }

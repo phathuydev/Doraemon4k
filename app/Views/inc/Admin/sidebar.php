@@ -3,7 +3,7 @@
     <div class="sidebar pe-4 pb-3 anthanhcuon">
       <nav class="navbar bg-secondary navbar-dark">
         <a href="<?= _WEB_ROOT ?>/admin" class="navbar-brand mx-5 mb-3">
-          <h3 class="text-primary"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" alt="" width="100xư"></h3>
+          <h3 class="text-primary"><img src="<?= _WEB_ROOT ?>/public/client/images/logodark.png" alt="" width="100xư"></h3>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
           <div class="position-relative">
@@ -27,9 +27,6 @@
           </a>
           <a href="<?= _WEB_ROOT ?>/videoManage?pages=1" class="nav-item nav-link text-white small <?= isset($video) ? 'active' : false ?>">
             <i class="fa fa-film ms-1 me-2"></i>Phim Của Tôi
-          </a>
-          <a href="<?= _WEB_ROOT ?>/videoApiManage?pages=1" class="nav-item nav-link text-white small <?= isset($videoApi) ? 'active' : false ?>">
-            <i class="fa fa-film ms-1 me-2"></i>Phim Thêm Từ Kho
           </a>
           <a href="<?= _WEB_ROOT ?>/ApiManage?pages=1" class="nav-item nav-link text-white small <?= isset($api) ? 'active' : false ?>">
             <i class="fa fa-film ms-1 me-2"></i>Kho Phim

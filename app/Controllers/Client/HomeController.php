@@ -21,7 +21,6 @@ class HomeController extends BaseController
     $this->data['pages'] = 'pages/Client/Home/Home';
     $this->data['subcontent']['pages_title'] = 'Trang Chủ';
     $this->data['subcontent']['getAllVideoNewLitmit40'] = $this->province->getAllVideoNewLitmit40();
-    $this->data['subcontent']['getAllCategoryHome'] = $this->province->getAllCategoryHome();
     $this->render('ClientMasterLayout', $this->data);
   }
   public function signout()

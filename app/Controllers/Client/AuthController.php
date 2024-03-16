@@ -14,6 +14,7 @@ class AuthController extends BaseController
   public function __construct()
   {
     $this->data['subcontent']['auth_css'] = '<link rel="stylesheet" href="' . _WEB_ROOT . '/public/client/css/auth.css">';
+    $this->data['subcontent']['auth'] = '';
     $this->model('Client', 'AuthModel');
     $this->province = new AuthModel();
   }

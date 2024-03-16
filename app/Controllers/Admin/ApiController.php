@@ -27,10 +27,9 @@ class ApiController extends BaseController
         $data = [
           'video_image' => $_POST['image'],
           'video_title' => $_POST['title'],
-          'video_slug' => $_POST['slug'],
-          'video_form' => 1,
+          'video_slug' => $_POST['slug']
         ];
-        $this->province->insertVideo($data);
+        $this->province->insert('videos', $data);
         echo '<script>
         alert("Thêm video thành công!");
         </script>';

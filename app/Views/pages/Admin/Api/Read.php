@@ -53,7 +53,7 @@ $form = new Form();
           </table>
         </div>
         <div class="d-flex justify-content-between align-items-center">
-          <select onchange="loadPage(this.value)" class="border-0 p-1">
+          <select onchange="loadPage(this.value)" class="border-0 p-1 bg-dark text-white">
             <?php for ($num = 1; $num <= $totalPage; $num++) { ?>
               <option value="<?= _WEB_ROOT ?>/ApiManage?pages=<?= $num; ?>" <?= ($num == $page) ? 'selected' : '' ?>>Trang <?= $num ?></option>
             <?php } ?>

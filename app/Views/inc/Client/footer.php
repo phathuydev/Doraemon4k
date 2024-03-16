@@ -49,7 +49,7 @@
     <div class="row align-items-center">
       <div class="col-lg-2 col-md-3 col-12">
         <a class="navbar-brand" href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>')">
-          <img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" class="logo-image img-fluid" alt="templatemo pod talk">
+          <img src="<?= _WEB_ROOT ?>/public/client/images/logo.png" class="logo-image img-fluid" alt="templatemo pod talk">
         </a>
       </div>
 
@@ -59,10 +59,7 @@
             <a href="<?= _WEB_ROOT ?>" class="site-footer-link">Trang Chủ</a>
           </li>
           <li class="site-footer-link-item">
-            <a href="<?= _WEB_ROOT ?>/video?pages=1&sort=desc" class="site-footer-link">Phim Doraemon</a>
-          </li>
-          <li class="site-footer-link-item">
-            <a href="<?= _WEB_ROOT ?>/videoApi?pages=1&sort=desc" class="site-footer-link">Phim Khác</a>
+            <a href="<?= _WEB_ROOT ?>/videoApi?pages=1&sort=desc" class="site-footer-link">Xem Phim</a>
           </li>
         </ul>
       </div>

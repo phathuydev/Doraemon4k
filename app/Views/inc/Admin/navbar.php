@@ -1,7 +1,7 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
   <a href="<?= _WEB_ROOT ?>/admin" class="navbar-brand d-flex d-lg-none me-4">
-    <h3 class="text-primary"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" alt="" width="100"></h3>
+    <h3 class="text-primary"><img src="<?= _WEB_ROOT ?>/public/client/images/logodark.png" alt="" width="100"></h3>
   </a>
   <a href="#" class="sidebar-toggler flex-shrink-0">
     <i class="fa fa-bars"></i>

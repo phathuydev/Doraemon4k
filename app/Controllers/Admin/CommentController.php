@@ -4,7 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 
-use App\Models\Admin\CommentModel;
+use App\Models\BaseModel;
 
 class CommentController extends BaseController
 {
@@ -16,8 +16,7 @@ class CommentController extends BaseController
       header('Location: ' . _WEB_ROOT . '/signinAdmin');
     }
     $this->data['subcontent']['comment'] = '';
-    $this->model('Admin', 'CommentModel');
-    $this->province = new CommentModel();
+    $this->province = new BaseModel();
   }
   public function index()
   {

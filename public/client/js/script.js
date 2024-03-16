@@ -87,14 +87,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function validateForm1() {
-  var commentField1 = document.getElementById("__contentComment1");
-  var commentError1 = document.getElementById("commentError1");
-
-  if (commentField1.value.trim() === "") {
-    commentError1.textContent = "Vui lòng nhập nội dung bình luận.";
-    return false;
-  }
-  return true;
-}
 

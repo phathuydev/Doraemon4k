@@ -31,6 +31,15 @@
   /* Thay đổi số này tùy ý */
 }
 
+._disabled {
+  background-color: #ddd;
+  /* Change to desired background color */
+  color: #666;
+  /* Change to desired text color */
+  cursor: not-allowed;
+  /* Change cursor to indicate not clickable */
+}
+
 .back-to-top {
   position: fixed;
   display: none;

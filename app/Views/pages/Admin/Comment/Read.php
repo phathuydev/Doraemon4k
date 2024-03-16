@@ -23,16 +23,10 @@
                   <td><?= $user_name ?></td>
                   <td>
                     <?php $getAllVideo = $this->province->getAll('videos WHERE video_id = ' . $video_id . ''); ?>
-                    <?php foreach ($getAllVideo as $data) {
-                      if ($data['video_form'] == 0) : ?>
-                        <div class="truncate-text-1">
-                          <a href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $data['video_id'] ?>&cate=<?= $data['category_id'] ?>"><?= $data['video_title'] ?></a>
-                        </div>
-                      <?php else : ?>
-                        <div class="truncate-text-1">
-                          <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $data['video_id'] ?>&slug=<?= $data['video_slug'] ?>&epi=1"><?= $data['video_title'] ?></a>
-                        </div>
-                      <?php endif ?>
+                    <?php foreach ($getAllVideo as $data) { ?>
+                      <div class="truncate-text-1">
+                        <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $data['video_id'] ?>&slug=<?= $data['video_slug'] ?>&epi=1"><?= $data['video_title'] ?></a>
+                      </div>
                     <?php } ?>
                   </td>
                   <td>
@@ -65,21 +59,11 @@
             </tbody>
           </table>
         </div>
-        <div class="d-flex justify-content-between align-items-center">
-          <nav aria-label="Page navigation example">
-            <div class="d-flex justify-content-between align-items-center">
-              <ul class="product__pagination pagination pagination-sm">
-                <li class="page-item <?= $page < 3 ? 'd-none' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/commentManage?pages=1')" tabindex="-1"><i class="fa fa-long-arrow-left"></i></a></li>
-                <?php for ($num = 1; $num <= $totalPage; $num++) { ?>
-                  <li class="page-item <?= $num == $page ? 'bg-danger' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/commentManage?pages=<?= $num; ?>')"><?= $num; ?></a>
-                  </li>
-                <?php } ?>
-                <li class="page-item <?= $page > ($totalPage - 1) ? 'd-none' : false; ?>"><a href="javascript:void(0)" onclick="loadPage('<?= _WEB_ROOT ?>/commentManage?pages=<?= $page + 1; ?>')"><i class="fa fa-long-arrow-right"></i></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <select onchange="loadPage(this.value)" class="border-0 p-1 bg-dark text-white">
+          <?php for ($num = 1; $num <= $totalPage; $num++) { ?>
+            <option value="<?= _WEB_ROOT ?>/videoManage?pages=<?= $num; ?>" <?= ($num == $page) ? 'selected' : '' ?>>Trang <?= $num ?></option>
+          <?php } ?>
+        </select>
       </div>
     </div>
   </div>

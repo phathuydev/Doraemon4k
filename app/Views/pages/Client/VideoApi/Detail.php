@@ -15,97 +15,11 @@ $item = $getVideoDetail; {
         <?php $value = $episodes; { ?>
           <iframe src="<?= $value[$_GET['epi'] - 1]['link_embed'] ?>" width="100%" class="embed-responsive-item" frameborder="0" allowfullscreen playsinline></iframe>
         <?php } ?>
-        <p class="text-dark mt-2 h5 font-weight-bold ps-2 pe-2"><?= $video_title ?></p>
-        <div class="d-flex justify-content-between align-items-center ps-2 pe-2">
-          <div class="d-flex justify-content-center align-items-center">
-            <a href="https://www.facebook.com/anhzachdeptrainhatthegioi/"><img src="https://2.bp.blogspot.com/-5JzRsh0gSWw/Wx9cHZPmGtI/AAAAAAAABmQ/jfEbb9kGrdEwVHLisW1pIv7ezPbekJ9BwCLcBGAs/s640/17_tactics_that_made_doraemon_so_popular2.png" width="100" alt=""></a>
-            <span class="ms-2 text-dark"><img src="<?= _WEB_ROOT ?>/public/client/images/verified.png" class="owl-carousel-verified-image img-fluid" width="20" alt=""></span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center bg-black bg-opacity-75 rounded-5 p-2 text-white">
-            <?php
-            if (!empty($_SESSION['user_id_client'])) :
-              if (!empty($countLikeVideoWhereUserAndVideo) == 0) : ?>
-                <form method="post" id="insertLikeForm">
-                  <input type="hidden" name="like" value="like">
-                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="insertLike()">
-                    <div class="d-flex">
-                      <div class="bi-hand-thumbs-up text-white m-0" id="thumbs_like"></div>
-                      <div class="ms-1 text-white" id="number_like"><?= $countLikeVideo ?></div>
-                    </div>
-                  </button>
-                </form>
-              <?php else : ?>
-                <form method="post" id="insertLikeForm">
-                  <input type="hidden" name="like" value="like">
-                  <button class="bg-transparent border-0" type="button" id="ilike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="insertLike()">
-                    <div class="d-flex">
-                      <div class="bi-hand-thumbs-up-fill text-white m-0" id="thumbs_like"></div>
-                      <div class="ms-1 text-white" id="number_like"><?= $countLikeVideo ?></div>
-                    </div>
-                  </button>
-                </form>
-              <?php endif ?>
-            <?php else : ?>
-              <button class="bg-transparent border-0 text-dark" data-bs-toggle="modal" href="#like_login">
-                <div class="d-flex">
-                  <div class="bi-hand-thumbs-up text-white m-0"></div>
-                  <div class="ms-1 text-white" id="number_like"><?= $countLikeVideo ?></div>
-                </div>
-              </button>
-              <div class="modal fade" id="like_login" aria-hidden="true" aria-labelledby="like_loginLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <p class="modal-title text-danger" id="like_loginLabel" style="font-weight: bold;"><i class="fa fa-warning text-danger"></i> Lưu ý</p>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="model-body">
-                      <p class="m-3 text-dark" style="font-weight: bold;">Đăng nhập để thích video này</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary small" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
-                      <a href="<?= _WEB_ROOT ?>/signin" class="btn btn-primary small">Đăng Nhập</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <?php endif ?>
-            <span class="ms-1 me-1">|</span>
-            <?php if (!empty($_SESSION['user_id_client'])) : ?>
-              <form method="post" id="deleteDisLikeForm">
-                <input type="hidden" name="dislike" value="dislike">
-                <button class="bg-transparent border-0" type="button" id="dislike" data-href="<?= _WEB_ROOT ?>/videoDetail?vdId=<?= $_GET['vdId'] ?>&cate=<?= $category_id ?>" onclick="disLike()">
-                  <div class="bi-hand-thumbs-down text-white m-0" id="thumbs_like_3"></div>
-                </button>
-              </form>
-            <?php else : ?>
-              <button type="button" data-bs-toggle="modal" href="#dislike_signin" class="bg-transparent border-0 text-dark">
-                <div class="bi-hand-thumbs-down text-white m-0"></div>
-              </button>
-              <div class="modal fade" id="dislike_signin" aria-hidden="true" aria-labelledby="like_loginLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <p class="modal-title text-danger" id="like_loginLabel" style="font-weight: bold;"><i class="fa fa-warning text-danger"></i> Lưu ý</p>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="model-body">
-                      <p class="m-3 text-dark" style="font-weight: bold;">Đăng nhập để không thích video này</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary small" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
-                      <a href="<?= _WEB_ROOT ?>/signin" class="btn btn-primary small">Đăng Nhập</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <?php endif; ?>
-          </div>
-        </div>
+        <p class="text-dark mt-2 h5 font-weight-bold ps-2 pe-2 mb-2"><?= $video_title ?></p>
         <div class="p-3 bg-primary bg-opacity-25 rounded-2 mt-2 ms-1 me-1">
           <div class="d-flex align-items-center">
             <span class="me-2" style="font-size: 14px;"><?= $data['view'] ?> lượt xem</span>
-            <span style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at_video)) ?></span>
+            <span style="font-size: 14px;"><?= $asp->formatTimeAgo(strtotime($created_at)) ?></span>
           </div>
           <div class="mt-2" id="longText">
             <?= $data['content'] ?>
@@ -148,10 +62,10 @@ $item = $getVideoDetail; {
         <div class="ms-1 me-1">
           <p class="text-dark m-0" style="font-weight: 400; font-size: 18px;">Bình luận (<?= $countCommentVideo['count'] ?>)</p>
           <div class="mt-2 mb-1 text-end">
-            <form onsubmit="return validateForm2()" action="<?= $current_url ?>" method="post">
-              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment2" maxlength="30" placeholder="Thể hiện ý kiến của bạn, tối đa 30 ký tự"></textarea>
+            <form action="<?= $current_url ?>" method="post">
+              <textarea name="content" class="w-100 rounded-2 p-2" id="__contentComment" maxlength="30" placeholder="Thể hiện ý kiến của bạn, tối đa 30 ký tự"></textarea>
               <div class="text-start">
-                <span id="commentError2" class="text-danger"></span>
+                <span id="commentError" class="text-danger"></span>
               </div>
               <div class="d-flex justify-content-between align-items-center mt-2">
                 <div class="filter__sort p-0">
@@ -160,7 +74,7 @@ $item = $getVideoDetail; {
                     <option value="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $_GET['vdId'] ?>&slug=<?= $_GET['slug'] ?>&epi=<?= $_GET['epi'] ?>&sort=asc" <?= (!empty($_GET['sort']) == 'asc' ? 'selected' : '') ?>>Cũ Nhất</option>
                   </select>
                 </div>
-                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
+                <?= (!empty($_SESSION['user_id_client']) ? '<button type="submit" name="comment" onclick="return validateForm()" class="btn btn-dark text-white p-1 border-0 rounded-1">Đăng</button>' :
                   '<a href="' . _WEB_ROOT . '/signin" class="btn btn-dark text-white p-1 border-0 rounded-1"><i class="fa fa-warning text-danger"></i> Đăng Nhập Để Bình Luận</a>') ?>
               </div>
             </form>
@@ -171,3 +85,18 @@ $item = $getVideoDetail; {
     </div>
   </section>
 <?php } ?>
+
+<script>
+  function validateForm() {
+    var content = document.getElementById("__contentComment").value.trim();
+    var errorSpan = document.getElementById("commentError");
+
+    if (content === "") {
+      errorSpan.innerText = "Vui lòng nhập nội dung bình luận.";
+      return false; // Ngăn form được gửi đi
+    } else {
+      errorSpan.innerText = ""; // Xóa thông báo lỗi nếu có
+      return true; // Cho phép form được gửi đi
+    }
+  }
+</script>
