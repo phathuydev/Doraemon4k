@@ -46,7 +46,7 @@ $item = $getVideoDetail; {
           <div class="video-con <?= $data['video_id'] == $_GET['vdId'] ? 'active-con' : '' ?> rounded-2 d-flex align-items-center mt-1 ms-1 me-1">
             <div class="thumb d-flex align-items-center">
               <a href="<?= _WEB_ROOT ?>/videoApiDetail?vdId=<?= $data['video_id'] ?>&slug=<?= $data['video_slug'] ?>&epi=1">
-                <img class="rounded-2" src="<?= $data['video_image'] ?>" alt="">
+                <img class="rounded-2" src="<?= $data['video_image'] ?>" alt="" style="width: 200px; height: 125px;">
               </a>
             </div>
             <div class="v-titles ms-2">

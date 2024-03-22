@@ -68,11 +68,6 @@ class VideoModel extends BaseModel
     $data = $this->getOne('videos', 'video_id', '=', $video_id, '*');
     return $data;
   }
-  public function getVideoCategoryDetail($category_id)
-  {
-    $data = $this->getAll('videos WHERE category_id = ' . $category_id . '');
-    return $data;
-  }
   public function getVideoSearch($keyword, $orderBy, $perPage, $offset)
   {
     $data = $this->getAll('videos WHERE video_title LIKE "' . '%' . $keyword . '%' . '"  AND is_deleted = 0 ORDER BY created_at ' . $orderBy . ' LIMIT ' . $perPage . ' OFFSET ' . $offset . '');

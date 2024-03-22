@@ -88,45 +88,45 @@ $form = new Form();
             <div class="owl-carousel-info-wrap item">
               <img src="https://d1j8r0kxyu9tj8.cloudfront.net/images/1566809340Y397jnilYDd15KN.jpg" class="owl-carousel-image img-fluid" alt="">
               <div class="owl-carousel-info">
-                <h4 class="mb-2">
+                <h6 class="mb-2 h6">
                   Avengers
-                </h4>
-                <span class="badge">Phim Lẻ</span>
+                </h6>
+                <span class="badge">Viễn Tưởng</span>
               </div>
             </div>
             <div class="owl-carousel-info-wrap item">
               <img src="https://images.fpt.shop/unsafe/filters:quality(5)/fptshop.com.vn/uploads/images/tin-tuc/176627/Originals/poster-phim-hoat-hinh-1.jpg" class="owl-carousel-image img-fluid" alt="">
               <div class="owl-carousel-info">
-                <h4 class="mb-2">
-                  Kungfu Panda
-                </h4>
-                <span class="badge">Phim Hoạt Hình</span>
+                <h6 class="mb-2 h6">
+                  K.Panda
+                </h6>
+                <span class="badge">Hoạt Hình</span>
               </div>
             </div>
             <div class="owl-carousel-info-wrap item">
-              <img src="https://cdn.tuoitre.vn/471584752817336320/data/teen360/pictures/2022/04/12/1649782607_nsd_main-poster.jpg" class="owl-carousel-image img-fluid" alt="">
+              <img src="https://static1.dienanh.net/upload/202107/32b4edef-8a63-4ebb-b58f-f568d67da658.jpg" class="owl-carousel-image img-fluid" alt="">
               <div class="owl-carousel-info">
-                <h4 class="mb-2">
-                  Nghề Siêu Dễ
-                </h4>
-                <span class="badge">Phim Hài Hành Động</span>
+                <h6 class="mb-2 h6">
+                  Tắm Cám
+                </h6>
+                <span class="badge">Tâm Lý</span>
               </div>
             </div>
             <div class="owl-carousel-info-wrap item">
               <img src="https://cdn.24h.com.vn/upload/4-2020/images/2020-12-02/bo-gia_teaser-1--1606900159-476-width660height873.jpg" class="owl-carousel-image img-fluid" alt="">
               <div class="owl-carousel-info">
-                <h4 class="mb-2">
+                <h6 class="mb-2 h6">
                   Bố Già
-                </h4>
-                <span class="badge">Hài Hước, Chính Kịch</span>
+                </h6>
+                <span class="badge">Hài Hước</span>
               </div>
             </div>
             <div class="owl-carousel-info-wrap item">
               <img src="https://thegioiinnhanh.com/upload/tiny/5_Mu_In_Poster_Dan_Tng_p__Cho_Vic_Qung_Cao.png" class="owl-carousel-image img-fluid" alt="">
               <div class="owl-carousel-info">
-                <h4 class="mb-2">
+                <h6 class="mb-2 h6">
                   Hai Phượng
-                </h4>
+                </h6>
                 <span class="badge">Võ Thuật</span>
               </div>
             </div>
